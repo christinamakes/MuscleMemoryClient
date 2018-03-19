@@ -6,7 +6,8 @@
 }
 
 .fieldset {
-  display: flex;
+  /* display: flex; */
+  width: 500px;
   align-items: center;
   align-content: space-around
   /* font-size: 50px */
