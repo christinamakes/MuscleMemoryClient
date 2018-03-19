@@ -12,9 +12,8 @@ class BrowseExercises extends React.Component {
     let exercises;
     
     if (this.props.exercises) {
-      console.log(this.props.exercises)
-      exercises = this.props.exercises.map(exer => 
-        <div>
+      exercises = this.props.exercises.map((exer, index) => 
+        <div key={index}>
         <h1>{exer.exerciseName}</h1>
         <h1>{exer.exerciseDescription}</h1>
         <h1>{exer.musclesWorked.toString()}</h1>

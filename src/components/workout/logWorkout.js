@@ -14,12 +14,6 @@ let workoutSelect;
 
 class LogWorkout extends React.Component {
 
-  componentDidMount() {
-    // if (this.props.loggedIn) this.props.dispatch(completeWorkout());
-    console.log('Log workout mounted')
-  }
-
-  
   onSubmit(values) {
     const {workoutSelected} = values;
     

@@ -1,22 +1,14 @@
-/* form {
-  display: block
+.signup-form-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
 }
 
-input {
-  margin: 15px 0;
-  font-size: 16px;
-  padding: 10px;
-  width: 250px;
-  border: 1px solid rgba(10, 180, 180, 1);
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  background: rgba(20, 20, 20, .2);
-  color: white;
-  outline: none;
+.fieldset {
+  display: flex;
+  align-items: center;
+  align-content: space-around
+  /* font-size: 50px */
 }
 
-label {
-  display: block;
-  font-size: 14px;
-} */

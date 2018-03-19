@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {FormError} from './styles/errors';
+// import './styles/signupForm.css'
 
 export default class Input extends React.Component {
     componentDidUpdate(prevProps) {

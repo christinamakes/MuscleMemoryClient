@@ -1,0 +1,8 @@
+.form-input {
+  display: flex;
+}
+
+label {
+  flex-direction: row;
+  font-size: 14px
+}
