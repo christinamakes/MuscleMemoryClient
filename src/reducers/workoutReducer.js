@@ -2,10 +2,12 @@ import {NEW_WORKOUT_ERROR, NEW_WORKOUT_SUCCESS, NEW_WORKOUT_REQUEST} from '../ac
 import {GET_WORKOUT_ERROR, GET_WORKOUT_SUCCESS, GET_WORKOUT_REQUEST} from '../actions/workout';
 import {GET_MUSCLES_ERROR, GET_MUSCLES_SUCCESS, GET_MUSCLES_REQUEST} from '../actions/workout';
 import {COMPLETE_WORKOUT_ERROR, COMPLETE_WORKOUT_SUCCESS, COMPLETE_WORKOUT_REQUEST} from '../actions/workout';
+import {GET_EXERCISES_ERROR, GET_EXERCISES_SUCCESS, GET_EXERCISES_REQUEST} from '../actions/workout';
 
 
 const initialState = {
   workouts: null,
+  recentWorkout: null,
   muscles: null,
   loading: false,
   error: null
@@ -82,6 +84,23 @@ function workoutReducer(state = initialState, action) {
         ...state,
         error: null,
         loading: false
+      }
+      case GET_EXERCISES_ERROR:
+      return {
+        ...state,
+        error: action.error,
+        loading: false
+      }
+    case GET_EXERCISES_REQUEST:
+      return {
+        ...state,
+        loading: true
+      }
+    case GET_EXERCISES_SUCCESS:
+      return {
+        ...state,
+        error: null,
+        recentWorkout: action.data
       }
     default: return state;
   }

@@ -10,11 +10,9 @@ class YourWorkouts extends React.Component {
   }
 
   render () {
-    console.log('your workouts mounted')
     let workouts;
     
     if (this.props.workouts) {
-      console.log(this.props.workouts)
       workouts = this.props.workouts.map((workout, index) => 
         <div key={index}>
         <h1>{workout.workoutName}</h1>
