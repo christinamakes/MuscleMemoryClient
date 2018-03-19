@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+.Tilt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 400px;
+    background-color: #7e56ff;
+    background-image: url('http://a57.foxnews.com/images.foxnews.com/content/fox-news/lifestyle/2017/11/09/how-to-keep-cat-from-scratching-your-sofa-to-shreds/_jcr_content/par/featured_image/media-0.img.jpg/1862/1048/1510172827500.jpg?ve=1&tl=1');
+    background-position: center;
+    box-shadow: 0 20px 27px rgba(0, 0, 0, 0.05);
+    transform-style: preserve-3d;
+}
+.Tilt-inner {
+  display: flex;
+  flex-direction: column;
+  transform: translateZ(200px);
+  font-size: 75px;
+}
