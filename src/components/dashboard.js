@@ -17,21 +17,21 @@ class Dashboard extends React.Component {
       return(
     
         <div className='dashboard-container'>
-          <div className='worked-muscles'>
-            <h1>Recently used muscles</h1>
-            <WorkedMuscles />
-          </div>
-          
-          <div className='recent-workout'>
-            <h1>Your recent workout</h1>
-            <RecentWorkout />
-          </div>
+          <div className='inner-container'>
+            <div className='worked-muscles'>
+              <WorkedMuscles />
+            </div>
 
-          <div className='log-workout'>
-            <h1>Log a workout</h1>
-            <LogWorkout />
+            <div className='recent-workout'>
+              <h1>Your recent workout</h1>
+              <RecentWorkout />
+            </div>
+
+            <div className='log-workout'>
+              <h1>Log a workout</h1>
+              <LogWorkout />
+            </div>
           </div>
-          
           
         </div>
       )

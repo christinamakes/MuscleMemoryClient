@@ -7,6 +7,8 @@
 import React from 'react'
 import MuscleMap from './muscleMap'
 
+import './styles/svg.css'
+
 export default function SVGUsage(props) {
   let colorMap;
   const generateColorMap = (dbValues) => {
@@ -29,6 +31,7 @@ export default function SVGUsage(props) {
 
   colorMap = generateColorMap(props.usedMuscles)
   return (
+    <div className='svg'>
     <MuscleMap 
         chestColor={colorMap.Chest || '#5ca2be'}
         armColor={colorMap.Arms || '#5ca2be'}
@@ -40,6 +43,7 @@ export default function SVGUsage(props) {
         glutesColor={colorMap.Glutes || '#5ca2be'}
         backColor={colorMap.Back || '#5ca2be'}
       />
+    </div>
   )
 }
 

@@ -1,11 +1,12 @@
 import React, {Component} from 'react' ;
 // import styled from 'styled-components';
 // import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {Nav, StyleLink} from './styles/links'
+// import {Nav, StyleLink} from './styles/links'
 import {clearAuth} from '../actions/auth' 
 
-
+import './styles/nav.css';
 
 class NavBar extends Component {
   
@@ -14,10 +15,10 @@ class NavBar extends Component {
     if (this.props.loggedIn) {
       console.log('loggedin!!')
       loggedIn = <div className='loggedin'>
-          <StyleLink to='/workouts'>My Workouts</StyleLink>
-          <StyleLink to='/exercises'>Exercises</StyleLink>
-          <StyleLink to='/dashboard'>Dashboard</StyleLink>
-          <StyleLink to='/' onClick={() => {
+          <NavLink to='/workouts' activeClassName="active">My Workouts</NavLink>
+          <NavLink to='/exercises'>Exercises</NavLink>
+          <NavLink to='/dashboard'>Dashboard</NavLink>
+          <NavLink to='/' onClick={() => {
             this.props.dispatch(clearAuth())
             // FIGURE OUT WHERE OTHER REDIRECT IS COMING FROM
             // .then(() => {
@@ -25,19 +26,19 @@ class NavBar extends Component {
             //     this.props.history.push("/login")
             //   }
             }}
-            >Logout</StyleLink></div>
+            >Logout</NavLink></div>
     } else {
       loggedIn = <div className='not-loggedin'>
-          <StyleLink to='/register'>Sign up</StyleLink> 
-          <StyleLink to='/login'>Login</StyleLink></div>
+          <NavLink to='/register'>Sign up</NavLink> 
+          <NavLink to='/login'>Login</NavLink></div>
     }
 
     return (
-      <nav className='nav-bar'>
-        <Nav>
-            <StyleLink to='/'>Home</StyleLink>
+      <nav className='nav'>
+        {/* <Nav> */}
+            <NavLink to='/'>Home</NavLink>
             {loggedIn}
-        </Nav>
+        {/* </Nav> */}
       </nav>
     );
   }

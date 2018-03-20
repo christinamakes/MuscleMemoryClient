@@ -1,24 +1,32 @@
-h1 {
 
-}
 @media only screen and (max-width: 800px) {
-  div.dashboard-container {
+  div.inner-container {
     display: flex;
     flex-direction: column;
   }
 }
 
 .dashboard-container {
-  display: flex;
-  background-color: black;
+  /* display: flex; */
+  /* background-image: url('../../assets/pexels-photo-931321.jpeg'); */
+  background-color: green;
+  background-size: cover;
   height: 95vh;
-  margin-left: 20px;
-  margin-right: 20px;
+  padding-top: 50px
+  
+}
+
+.inner-container {
+  width: 95%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: blue
 }
 
 .recent-workout{
   border: 2px solid purple;
-  background-color: purple;
+  /* background-color: purple; */
   width: 30vw;
   /* min-width:20vw; */
   /* max-width:30vw */
@@ -26,16 +34,16 @@ h1 {
 
 
 .worked-muscles {
-  border: 2px solid yellow;
-  background-color: yellow;
+  /* border: 2px solid yellow; */
+  /* background-color: rgb(102, 102, 101); */
   min-width: 40vw;
   max-width: 40vw
 }
 
 .log-workout {
   border: 2px solid red;
-  color: blue;
-  background-color: red;
+  color: yellow;
+  /* background-color: red; */
   /* min-width:20vw; */
   width: 30vw;
 }

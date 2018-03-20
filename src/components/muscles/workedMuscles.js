@@ -5,7 +5,7 @@ import SVGUsage from '../generateColorMap';
 import Strain from '../generateStrain';
 
 // console.log(generateColorMap)
-
+import '../styles/workedMuscles.css'
 
 class WorkedMuscles extends React.Component {
 
@@ -14,17 +14,23 @@ class WorkedMuscles extends React.Component {
   }
 
   render () {
-    let musclesUsed;
-
     const usedMuscles = this.props.recentMuscles;
 
-    return (<div>
-      {musclesUsed}
-      <SVGUsage 
-        usedMuscles={usedMuscles}/> {/* SVG */}
-      <Strain
-        usedMuscles={usedMuscles} />
-      </div>)
+    return (
+      <div className='workedMuscles-container'>
+        <div className='svg-container'>
+          <SVGUsage 
+            usedMuscles={usedMuscles}/> {/* SVG */}
+        </div>
+        <div className='muscleStrain-container'>
+          <Strain
+            usedMuscles={usedMuscles} />
+        </div>
+        <div className='disclaimer'>
+          <p>Do not overwork your muscles</p>
+        </div>
+      </div>
+      )
   }
   
 }

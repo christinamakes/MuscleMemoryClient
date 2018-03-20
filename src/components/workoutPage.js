@@ -11,7 +11,7 @@ class WorkoutPage extends React.Component {
     return (
       <div>
         <WorkoutForm />
-        <ShowAllWorkouts />
+        {/* <ShowAllWorkouts /> */}
         <YourWorkouts />
       </div>
     )

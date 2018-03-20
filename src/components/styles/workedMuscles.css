@@ -1,0 +1,18 @@
+.workedMuscles-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  /* background-color: blue; */
+  height: 100%;
+  border-right: 1px solid black; 
+}
+
+.svg-container {
+  /* background-color: rgb(32, 117, 32); */
+  border: 1px solid black;
+}
+
+.muscleStrain-container {
+  background-color: orange;
+}
