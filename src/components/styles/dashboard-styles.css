@@ -2,13 +2,19 @@ h1 {
   color: red;
 }
 
+.recent-workout{
+  float:right;
+  border: 2px solid purple
+}
+
 .your-workouts {
   float: right;
   border: 2px solid green;
 }
 
 .worked-muscles {
-  border: 2px solid yellow
+  border: 2px solid yellow;
+  margin-left: 20px
 }
 
 .log-workout {

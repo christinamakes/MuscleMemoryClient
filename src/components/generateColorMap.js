@@ -11,11 +11,12 @@ export default function SVGUsage(props) {
   let colorMap;
   const generateColorMap = (dbValues) => {
     const INTENSITY_MAP = {
-      1: 'yellow',
-      2: 'orange',
-      3: 'red',
+      1: 'yellow', // used
+      2: 'orange', // worked
+      3: 'red', // intensely worked
+      4: 'darkred' // strained
     };
-    const MAX_INTENSITY = 3
+    const MAX_INTENSITY = 4
     //Math.max.apply(null, Object.keys(INTENSITY_MAP));
     
     return Object.entries(dbValues)

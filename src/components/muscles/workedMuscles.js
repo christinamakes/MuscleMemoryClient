@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {getMusclesFromWorkout} from '../../actions/workout'
 import MuscleMap from '../muscleMap';
 import SVGUsage from '../generateColorMap';
+import Strain from '../generateStrain';
 
 // console.log(generateColorMap)
 
@@ -15,13 +16,15 @@ class WorkedMuscles extends React.Component {
 
   render () {
     let musclesUsed;
-    let colorMap;
+
     const usedMuscles = this.props.recentMuscles;
 
     return (<div>
       {musclesUsed}
       <SVGUsage 
         usedMuscles={usedMuscles}/> {/* SVG */}
+      <Strain
+        usedMuscles={usedMuscles} />
       </div>)
   }
   
