@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {FormError} from './styles/errors';
-// import './styles/signupForm.css'
+import './styles/signupForm.css'
 
 export default class Input extends React.Component {
     componentDidUpdate(prevProps) {
@@ -13,7 +13,7 @@ export default class Input extends React.Component {
     render() {
         let error;
         if (this.props.meta.touched && this.props.meta.error) {
-            error = <FormError>{this.props.meta.error}</FormError>;
+            error = <div className='form-error'>{this.props.meta.error}</div>;
         }
 
         let warning;
@@ -34,6 +34,7 @@ export default class Input extends React.Component {
                     {...this.props.input}
                     id={this.props.input.name}
                     type={this.props.type}
+                    // placeholder={this.props.placeholder}
                     ref={input => (this.input = input)}
                 />
             </div>

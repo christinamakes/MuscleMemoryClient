@@ -1,0 +1,20 @@
+body {
+  /* width: 100%;
+  height: 100%; */
+  background-image: url('../../assets/pexels-photo-685530.jpeg');
+  /* background-size: cover; */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h3 {
+  margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  color: white;
+  text-align: center
+}
+
+

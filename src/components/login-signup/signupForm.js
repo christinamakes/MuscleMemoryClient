@@ -12,7 +12,7 @@ import {SubmitButton} from '../styles/buttons'
 import '../styles/signupForm.css';
 
 import {required, notEmpty, isTrimmed, length, matches} from '../../validators'
-const passwordLength = length({min:5, max:72});
+const passwordLength = length({min:10, max:72});
 const matchesPassword = matches('password');
 
 
@@ -27,15 +27,28 @@ export class SignupForm extends React.Component {
   }
 
   render() {
+    let error;
+        if (this.props.error) {
+            error = (
+                <div className="form-error">
+                    {this.props.error}
+                </div>
+            );
+        }
     return (
-      <div className='signup-form-container'>
+    <div className='flex-container'>
+      <div className='row'>
+      <div className='flex-item'>
+      {error}
         <form className='signup-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+
           <div className='fieldset'>
             <label htmlFor='firstName'>First Name</label>
             <Field 
               component={Input} 
               type='text' 
               name='firstName'
+              placeholder="First Name"
               validate={[required, notEmpty]} />
           </div>  
           <div className='fieldset'>
@@ -44,35 +57,41 @@ export class SignupForm extends React.Component {
               component={Input} 
               type='text' 
               name='lastName'
+              placeholder="Last Name"
               validate={[required, notEmpty]} />
-          </div>
-          <div className='fieldSet'>
+            </div>
+            <div className='fieldset'>
             <label htmlFor='username'>Username</label>
             <Field 
               component={Input} 
               type='text' 
               name='username'
+              placeholder="Username"
               validate={[required, notEmpty, isTrimmed]} />
-          </div>
-          <div className='fieldset'>
+</div>
+<div className='fieldset'>
             <label htmlFor='password'>Password</label>
             <Field 
               component={Input} 
               type='password' 
               name='password'
+              placeholder="Password"
               validate={[required, notEmpty, isTrimmed, passwordLength]} />
-          </div>
-          <div className='fieldset'>
+</div>
+<div className='fieldset'>
             <label htmlFor='confirmPassword'>Confim Password</label>
             <Field 
               component={Input} 
               type='password' 
               name='confirmPassword'
+              placeholder="Confirm Password"
               validate={[required, notEmpty, isTrimmed, matchesPassword, passwordLength]} />
-          </div>
-          <SubmitButton type='submit' disabled={this.props.pristine || this.props.submitting}>Register</SubmitButton>
+</div>
+          <button type='submit' disabled={this.props.pristine || this.props.submitting}>Register</button>
         </form>
+        </div>
       </div>
+    </div>
     );
   }
 }
