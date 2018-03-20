@@ -5,7 +5,7 @@ import {getExercises} from '../../actions/exercises'
 class BrowseExercises extends React.Component {
 
   componentDidMount() {
-    this.props.dispatch(getExercises());
+    if (!this.props.exercises) this.props.dispatch(getExercises());
   }
 
   render () {

@@ -1,30 +1,41 @@
 h1 {
-  color: red;
+
+}
+@media only screen and (max-width: 800px) {
+  div.dashboard-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.dashboard-container {
+  display: flex;
+  background-color: black;
+  height: 95vh;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .recent-workout{
-  float:right;
-  border: 2px solid purple
+  border: 2px solid purple;
+  background-color: purple;
+  width: 30vw;
+  /* min-width:20vw; */
+  /* max-width:30vw */
 }
 
-.your-workouts {
-  float: right;
-  border: 2px solid green;
-}
 
 .worked-muscles {
   border: 2px solid yellow;
-  margin-left: 20px
+  background-color: yellow;
+  min-width: 40vw;
+  max-width: 40vw
 }
 
 .log-workout {
-  float: right;
   border: 2px solid red;
-  color: blue
-}
-
-.create-workout {
-  border: 2px solid orange;
-  float: right;
-  color: orange
+  color: blue;
+  background-color: red;
+  /* min-width:20vw; */
+  width: 30vw;
 }

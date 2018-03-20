@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {getMusclesFromWorkout} from '../../actions/workout'
-import MuscleMap from '../muscleMap';
 import SVGUsage from '../generateColorMap';
 import Strain from '../generateStrain';
 

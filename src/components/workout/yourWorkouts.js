@@ -5,7 +5,7 @@ import {getWorkouts} from '../../actions/workout'
 class YourWorkouts extends React.Component {
 
   componentDidMount() {
-    if (this.props.loggedIn) this.props.dispatch(getWorkouts());
+    if (this.props.loggedIn && !this.props.workouts) this.props.dispatch(getWorkouts());
     
   }
 

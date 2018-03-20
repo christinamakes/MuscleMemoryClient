@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {completeWorkout} from '../../actions/workout'
+import {completeWorkout, getWorkouts} from '../../actions/workout'
 import {Field, reduxForm} from 'redux-form';
 import Input from '../input';
 import {getMusclesFromWorkout} from '../../actions/workout'
@@ -13,6 +13,10 @@ import {SubmitButton} from '../styles/buttons'
 let workoutSelect;
 
 class LogWorkout extends React.Component {
+
+  componentDidMount() {
+    if (!this.props.workouts) this.props.dispatch(getWorkouts());
+  }
 
   onSubmit(values) {
     const {workoutSelected} = values;
