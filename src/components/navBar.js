@@ -17,7 +17,15 @@ class NavBar extends Component {
           <StyleLink to='/workouts'>My Workouts</StyleLink>
           <StyleLink to='/exercises'>Exercises</StyleLink>
           <StyleLink to='/dashboard'>Dashboard</StyleLink>
-          <StyleLink to='/' onClick={() => this.props.dispatch(clearAuth())}>Logout</StyleLink></div>
+          <StyleLink to='/' onClick={() => {
+            this.props.dispatch(clearAuth())
+            // FIGURE OUT WHERE OTHER REDIRECT IS COMING FROM
+            // .then(() => {
+            //   if (!this.props.loggedIn) {
+            //     this.props.history.push("/login")
+            //   }
+            }}
+            >Logout</StyleLink></div>
     } else {
       loggedIn = <div className='not-loggedin'>
           <StyleLink to='/register'>Sign up</StyleLink> 

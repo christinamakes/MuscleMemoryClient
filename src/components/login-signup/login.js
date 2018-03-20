@@ -20,8 +20,6 @@ export class LoginForm extends React.Component {
           this.props.history.push("/dashboard")
         }
       })
-      
-      // this.props.dispatch(login(username,password)));
   }
 
   render() {
