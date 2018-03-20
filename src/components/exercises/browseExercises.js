@@ -16,7 +16,7 @@ class BrowseExercises extends React.Component {
         <div key={index}>
         <h1>{exer.exerciseName}</h1>
         <h1>{exer.exerciseDescription}</h1>
-        <h1>{exer.musclesWorked.toString()}</h1>
+        {/* <h1>{exer.musclesWorked.toString()}</h1> */}
         </div>)
     }
   

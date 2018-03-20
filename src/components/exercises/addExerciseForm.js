@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import {newExercise} from '../../actions/exercises'
+import {newExercise, getExercises} from '../../actions/exercises'
 // import validators
 
 import Input from '../input';
@@ -8,16 +8,25 @@ import {required, notEmpty} from '../../validators'
 
 import {SubmitButton} from '../styles/buttons'
 
-const muscles = [{'arms':'5aa81a1ca3f42c4d7a855f91'}, 
-{'legs':'5aa7efd0ead454399b4faf7f'}, 
-{'shoulders': '5aa81a1ca3f42c4d7a855f94'},
-{'abs':'5aa81a1ca3f42c4d7a855f96'}, 
-{'chest': '5aa81a1ca3f42c4d7a855f97'},
-{'glute':'5aa81a1ca3f42c4d7a855f95'},
-{'back': '5aa81a1ca3f42c4d7a855f93'}]
+// local devlopment
+// const muscles = [{'arms':'5aa81a1ca3f42c4d7a855f91'}, 
+// {'legs':'5aa7efd0ead454399b4faf7f'}, 
+// {'shoulders': '5aa81a1ca3f42c4d7a855f94'},
+// {'abs':'5aa81a1ca3f42c4d7a855f96'}, 
+// {'chest': '5aa81a1ca3f42c4d7a855f97'},
+// {'glute':'5aa81a1ca3f42c4d7a855f95'},
+// {'back': '5aa81a1ca3f42c4d7a855f93'}]
 
-// console.log(Object.values(muscles[1])[0]); // get ID of arms
-// console.log(Object.keys(muscles[1]).toString()) // get arms
+// MLAB
+const muscles = [{'arms':'5aafe00c734d1d1b82898043'}, 
+{'legs':'5aafe06b734d1d1b8289806e'}, 
+{'shoulders': '5aafe081734d1d1b82898081'},
+{'abs':'5aafe09a734d1d1b8289808e'}, 
+{'chest': '5aafe0a4734d1d1b82898090'},
+{'glute':'5aafe08f734d1d1b82898085'},
+{'back': '5aafe075734d1d1b82898072'}]
+
+
 export class ExerciseForm extends React.Component {
   
   onSubmit(values) {
@@ -26,7 +35,7 @@ export class ExerciseForm extends React.Component {
     const usedMuscles = Object.keys(musclesWorked).filter(muscle => musclesWorked[muscle]) // return all muscles set to true
     
     return this.props.dispatch(newExercise(exerciseName, exerciseDescription, usedMuscles))
-      .then(() => console.log("adding exercise" + exerciseDescription))
+      .then(() => this.props.dispatch(getExercises()))
   }
 
   render() {
@@ -59,7 +68,7 @@ export class ExerciseForm extends React.Component {
               </div>)
           })
         }
-        <SubmitButton type='submit' disabled={this.props.pristine || this.props.submitting}>Login</SubmitButton>
+        <SubmitButton type='submit' disabled={this.props.pristine || this.props.submitting}>Add Exercise</SubmitButton>
       </form>
     );
   }
