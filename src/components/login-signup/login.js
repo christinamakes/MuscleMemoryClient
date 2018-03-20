@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import Input from '../input';
 import {required, notEmpty, isTrimmed} from '../../validators'
 
-import {SubmitButton} from '../styles/buttons'
+import '../styles/login.css';
 
 
 export class LoginForm extends React.Component {
@@ -32,22 +32,33 @@ export class LoginForm extends React.Component {
             );
         }
     return (
+      <div className='flex-container'>
+      <div className='row'>
+      <div className='flex-item'>
       <form className='login-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
       {error}
+      <div className='fieldset'>
         <label htmlFor='username'>Username</label>
         <Field 
           component={Input} 
           type='text' 
           name='username'
           validate={[required, notEmpty, isTrimmed]} />
+        </div>
+
+        <div className='fieldset'>
         <label htmlFor='password'>Password</label>
         <Field 
           component={Input} 
           type='password' 
           name='password'
           validate={[required, notEmpty, isTrimmed]} />
-        <SubmitButton type='submit' disabled={this.props.pristine || this.props.submitting}>Login</SubmitButton>
+          </div>
+        <button type='submit' disabled={this.props.pristine || this.props.submitting}>Login</button>
       </form>
+      </div>
+      </div>
+      </div>
     );
   }
 }

@@ -36,13 +36,14 @@ export class SignupForm extends React.Component {
             );
         }
     return (
-    <div className='flex-container'>
-      <div className='row'>
-      <div className='flex-item'>
+      <div classname='sign'>
+    <div className='flex-container-sign'>
+      <div className='row-sign'>
+      <div className='flex-item-sign'>
       {error}
         <form className='signup-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
 
-          <div className='fieldset'>
+          <div className='fieldset-sign'>
             <label htmlFor='firstName'>First Name</label>
             <Field 
               component={Input} 
@@ -51,7 +52,7 @@ export class SignupForm extends React.Component {
               placeholder="First Name"
               validate={[required, notEmpty]} />
           </div>  
-          <div className='fieldset'>
+          <div className='fieldset-sign'>
             <label htmlFor='lastName'>Last Name</label>
             <Field 
               component={Input} 
@@ -60,7 +61,7 @@ export class SignupForm extends React.Component {
               placeholder="Last Name"
               validate={[required, notEmpty]} />
             </div>
-            <div className='fieldset'>
+            <div className='fieldset-sign'>
             <label htmlFor='username'>Username</label>
             <Field 
               component={Input} 
@@ -69,7 +70,7 @@ export class SignupForm extends React.Component {
               placeholder="Username"
               validate={[required, notEmpty, isTrimmed]} />
 </div>
-<div className='fieldset'>
+<div className='fieldset-sign'>
             <label htmlFor='password'>Password</label>
             <Field 
               component={Input} 
@@ -78,7 +79,7 @@ export class SignupForm extends React.Component {
               placeholder="Password"
               validate={[required, notEmpty, isTrimmed, passwordLength]} />
 </div>
-<div className='fieldset'>
+<div className='fieldset-sign'>
             <label htmlFor='confirmPassword'>Confim Password</label>
             <Field 
               component={Input} 
@@ -91,6 +92,7 @@ export class SignupForm extends React.Component {
         </form>
         </div>
       </div>
+    </div>
     </div>
     );
   }

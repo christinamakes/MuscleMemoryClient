@@ -1,4 +1,4 @@
-.flex-container {
+.flex-container-sign {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,12 +6,12 @@
   height: 500px;
 }
 
-.row {
+.row-sign {
   width: auto;
   border-radius: 2px;
 }
 
-.flex-item {
+.flex-item-sign {
   height: 400px;
   width: 300px;
   background-color: rgba(0, 0, 0, 0.685);
@@ -21,7 +21,7 @@
   margin: 60px
 }
 
-.form-input input{
+.sign .form-input input{
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   border: none;
@@ -29,28 +29,30 @@
   height: 20px
 }
 
-label {
+.fieldset-sign label {
   color: white;
   margin-top: 50px;
   margin-left: 20px;
   font-family: 'Roboto', sans-serif;
 }
 
-.form-error {
+
+/* broken */
+.form-error .sign{
   border-left: 8px solid #D0021B;
   color: white
 }
 
-.fieldset {
+.fieldset-sign {
   margin-top:20px;
   margin-bottom:20px
 }
 
-input {
+.sign input {
   margin-top: 5px;
 }
 
-button {
+.sign button {
   margin-left: 73px;
   margin-top: 20px;
   height: 26px;
