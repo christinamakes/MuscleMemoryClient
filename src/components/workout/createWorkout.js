@@ -1,6 +1,6 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import {newWorkout} from '../../actions/workout'
+import {newWorkout, getWorkouts} from '../../actions/workout'
 // import Multiselect from 'react-widgets/lib/Multiselect'
 import {connect} from 'react-redux';
 
@@ -28,7 +28,7 @@ export class WorkoutForm extends React.Component {
     const checkedExercises = Object.keys(exercisesChecked).filter(exercise => exercisesChecked[exercise]) // return all muscles set to true
     
     return this.props.dispatch(newWorkout(workoutName, checkedExercises))
-      .then(() => console.log("adding wokrout " + values))
+      .then(() => this.props.dispatch(getWorkouts()))
   }
 
   

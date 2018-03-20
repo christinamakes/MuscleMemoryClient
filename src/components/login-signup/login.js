@@ -1,5 +1,5 @@
 import React from 'react';
-import {Field, reduxForm} from 'redux-form';
+import {Field, reduxForm, focus} from 'redux-form';
 import {login} from '../../actions/auth'
 import {connect} from 'react-redux';
 // import validators
@@ -23,8 +23,17 @@ export class LoginForm extends React.Component {
   }
 
   render() {
+    let error;
+        if (this.props.error) {
+            error = (
+                <div className="form-error">
+                    {this.props.error}
+                </div>
+            );
+        }
     return (
       <form className='login-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+      {error}
         <label htmlFor='username'>Username</label>
         <Field 
           component={Input} 
@@ -47,4 +56,6 @@ export const mapStateToProps = (state,props) => ({
   loggedIn: state.auth.currentUser !== null
 })
 
-export default reduxForm({form: 'login',})(connect(mapStateToProps)((LoginForm)));
+export default reduxForm({
+  form: 'login', 
+  onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))})(connect(mapStateToProps)((LoginForm)));
