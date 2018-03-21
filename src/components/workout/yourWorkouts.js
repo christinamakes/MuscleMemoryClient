@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {getWorkouts} from '../../actions/workout'
 
+import '../styles/your-workouts.css';
+
 class YourWorkouts extends React.Component {
 
   componentDidMount() {
@@ -15,12 +17,16 @@ class YourWorkouts extends React.Component {
     if (this.props.workouts) {
       workouts = this.props.workouts.map((workout, index) => 
         <div key={index}>
-        <h1>{workout.workoutName}</h1>
+        <p>{workout.workoutName}</p>
         {/* <h1>{workout.exercises}</h1> */}
         </div>)
     }
   
-    return (<h1>{workouts}</h1>)
+    return (
+    <div className='browse-workouts'>
+      <h1>Your Workouts</h1>
+      <div className='workout-list'>{workouts}</div>
+    </div>)
   }
 }
 

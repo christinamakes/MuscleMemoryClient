@@ -46,6 +46,7 @@ export class ExerciseForm extends React.Component {
     return (
       <div className='add-exercise-container'>
       <form className='add-exercise-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+      <h1>Create an exercise</h1>
         <div className='fieldset-exercise'>
           <label htmlFor='exerciseName'>Exercise Name</label>
           <Field 

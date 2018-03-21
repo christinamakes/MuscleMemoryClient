@@ -1,5 +1,5 @@
 import React from 'react';
-import {Field, reduxForm} from 'redux-form';
+import {Field, reduxForm, reset} from 'redux-form';
 import {newWorkout, getWorkouts} from '../../actions/workout'
 // import Multiselect from 'react-widgets/lib/Multiselect'
 import {connect} from 'react-redux';
@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 import Input from '../input';
 import {required, notEmpty} from '../../validators'
 
-import {SubmitButton} from '../styles/buttons'
+import '../styles/create-workout.css'
 
 import {getExercises} from '../../actions/exercises'
 
@@ -29,6 +29,7 @@ export class WorkoutForm extends React.Component {
     
     return this.props.dispatch(newWorkout(workoutName, checkedExercises))
       .then(() => this.props.dispatch(getWorkouts()))
+      .then(() => this.props.dispatch(reset('workout')))
   }
 
   
@@ -38,7 +39,7 @@ export class WorkoutForm extends React.Component {
         const name = exercise.exerciseName;
         const eId = exercise._id;
         return (
-          <div key={index}>
+          <div className='fieldset-workout' key={index}>
             <label htmlFor={name}>{name}</label>
             <Field
               component={Input}
@@ -51,19 +52,22 @@ export class WorkoutForm extends React.Component {
       };
     
     return (
-      <div>
-      <form className='add-workout-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-        <label htmlFor='workoutName'>Workout Name</label>
-        <Field 
-          component={Input} 
-          type='text' 
-          name='workoutName'
-          validate={[required, notEmpty]} />
+      <div className='workout-form-container'>
+        <form className='add-workout-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+          <h1>Create a workout</h1>
+          <div className='fieldset-workout'>
+            <label htmlFor='workoutName'>Workout Name</label>
+            <Field 
+              component={Input} 
+              type='text' 
+              name='workoutName'
+              validate={[required, notEmpty]} />
+          </div>
 
-          {exerciseSelect}
+          <div className='exercises'>{exerciseSelect}</div>
 
-        <SubmitButton type='submit' disabled={this.props.pristine || this.props.submitting}>Add Workout</SubmitButton>
-      </form>
+          <button type='submit' disabled={this.props.pristine || this.props.submitting}>Add Workout</button>
+        </form>
       </div>
     );
   }

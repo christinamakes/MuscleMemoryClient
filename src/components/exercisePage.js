@@ -10,7 +10,7 @@ class ExercisePage extends React.Component {
   render() {
     return (
       <div className='exercise-page'>
-        <div className='picture'></div>
+        <div className='picture' title='man flipping in the sand'></div>
         <div className='exercise-form'><ExerciseForm /></div>
         <div className='browse-exercises'><BrowseExercises /></div>
       </div>

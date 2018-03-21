@@ -4,15 +4,15 @@ import ShowAllWorkouts from './workout/showAllWorkouts'
 import YourWorkouts from './workout/yourWorkouts';
 import WorkoutForm from './workout/createWorkout';
 
-
+import './styles/workout-page.css';
 
 class WorkoutPage extends React.Component {
   render() {
     return (
-      <div>
-        <WorkoutForm />
-        {/* <ShowAllWorkouts /> */}
-        <YourWorkouts />
+      <div className='workout-page'>
+        <div className='workout-picture' title='Man holding a barbell'></div>
+        <div className='workout-form'><WorkoutForm /></div>
+        <div className='your-workouts'><YourWorkouts /></div>
       </div>
     )
   }

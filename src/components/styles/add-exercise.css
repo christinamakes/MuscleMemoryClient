@@ -5,6 +5,7 @@
   /* background-color: green; */
   height:100%;
   display:flex;
+  flex-direction: column;
   align-items:center;
   justify-content:center;
 }
@@ -15,6 +16,13 @@
   margin-top: -20%;
 }
 
+.add-exercise-container h1 {
+  width: 240px;
+  font-size: 25px;
+  padding-top: 3%;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
 
 .fieldset-exercise .form-input {
   padding-top: 4px;

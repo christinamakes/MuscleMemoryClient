@@ -1,19 +1,18 @@
 @media only screen and (max-width: 800px) {
 
-  div.exercise-page {
+  div.workout-page {
     display: flex;
     flex-direction: column;
     overflow: visible;
-  position: relative;
-  
+    position: relative;
   }
-  
-  div.picture {
+
+  div.workout-picture {
     display: none;
   }
 }
 
-.exercise-page {
+.workout-page {
   display: flex;
   /* flex-direction: row;
   flex-wrap: wrap; */
@@ -21,22 +20,22 @@
   overflow: hidden;
 }
 
-.exercise-form {
+.workout-form {
   /* flex: 1 0 45%; */
   height: 100vh;
   width: 32.5vw;
   /* margin-top: 5%; */
 }
 
-.browse-exercises {
+.your-workouts {
   /* flex: 1 0 50%; */
   height: 100vh;
   width: 32.5vw
 }
 
-.picture {
+.workout-picture {
   /* flex: 0 1 100%; */
-  background-image: url('../../assets/175b4207-1158-427f-abc8-934137c6cf85_rw_1920.jpg');
+  background-image: url('../../assets/pexels-photo-931321.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -370px 0px;
