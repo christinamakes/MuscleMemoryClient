@@ -1,7 +1,9 @@
-import {NEW_EXERCISE_ERROR, NEW_EXERCISE_SUCCESS} from '../actions/exercises';
+import {NEW_EXERCISE_ERROR, NEW_EXERCISE_SUCCESS, NEW_EXERCISE_REQUEST} from '../actions/exercises';
 
 const initialState = {
-  exercises: null
+  exercises: null,
+  loading: false,
+  error: null,
 };
 
 function authReducer(state = initialState, action) {
@@ -9,11 +11,20 @@ function authReducer(state = initialState, action) {
     case NEW_EXERCISE_SUCCESS: 
       return {
         ...state,
-        exercises: action.data
+        exercises: action.data,
+        loading: false,
+        error: null
       }
     case NEW_EXERCISE_ERROR: 
       return {
-        ...state
+        ...state,
+        error: action.error,
+        loading: false
+      }
+    case NEW_EXERCISE_REQUEST: 
+      return {
+        ...state,
+        loading:true
       }
     default: return state;
   }

@@ -16,8 +16,14 @@ export const newExerciseError = error => ({
     error
 });
 
+export const NEW_EXERCISE_REQUEST = 'NEW_EXERCISE_REQUEST';
+export const newExerciseRequest = () => ({
+    type: NEW_EXERCISE_REQUEST,
+});
+
 export const newExercise = (exerciseName, musclesWorked) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
+  dispatch(newExerciseRequest())
   return fetch(`${API_BASE_URL}/exercise`, {
     method: 'POST',
     headers: {

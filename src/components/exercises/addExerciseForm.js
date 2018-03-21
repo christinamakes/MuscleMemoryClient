@@ -1,6 +1,7 @@
 import React from 'react';
-import {Field, reduxForm} from 'redux-form';
-import {newExercise, getExercises} from '../../actions/exercises'
+import {Field, reduxForm, reset} from 'redux-form';
+import {newExercise, getExercises} from '../../actions/exercises';
+import {connect} from 'react-redux';
 // import validators
 
 import Input from '../input';
@@ -8,6 +9,7 @@ import {required, notEmpty} from '../../validators'
 
 import {SubmitButton} from '../styles/buttons'
 import '../styles/add-exercise.css'
+
 
 // local devlopment
 const muscles = [{'arms':'5aa81a1ca3f42c4d7a855f91'}, 
@@ -27,19 +29,20 @@ const muscles = [{'arms':'5aa81a1ca3f42c4d7a855f91'},
 // {'glute':'5aafe08f734d1d1b82898085'},
 // {'back': '5aafe075734d1d1b82898072'}]
 
-
+let submit;
 export class ExerciseForm extends React.Component {
   
   onSubmit(values) {
     const {exerciseName, musclesWorked} = values;
-    
     const usedMuscles = Object.keys(musclesWorked).filter(muscle => musclesWorked[muscle]) // return all muscles set to true
-    
     return this.props.dispatch(newExercise(exerciseName, usedMuscles))
-      .then(() => this.props.dispatch(getExercises()))
+    .then(() => this.props.dispatch(getExercises()))
+    .then(() => this.props.dispatch(reset('exercise')))
   }
 
+  
   render() {
+    // let submit;
     return (
       <div className='add-exercise-container'>
       <form className='add-exercise-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
@@ -72,6 +75,11 @@ export class ExerciseForm extends React.Component {
     );
   }
 }
+
+
+// export const mapStatetoProps = (state, props) => ({
+//   error: state.exercise.error ? state.exercise.error : ''
+// })
 
 export default reduxForm({
   form: 'exercise',
