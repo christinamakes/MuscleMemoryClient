@@ -1,24 +1,37 @@
 .nav {
   display: flex;
-  height: 35px;
+  height: 60px;
   align-items: center;
   list-style: none;
-  background-color: lightcoral;
+  /* background: linear-gradient(to right, #fc4a1a, #f7b733) */
+  /* background-color: #FC5830; */
+  background: #cb2d3e;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
 }
 
 a {
+  font-family: 'Raleway', sans-serif;
+  text-transform: lowercase;
   flex: 1;
   padding-right: 30px;
   padding-left: 30px;
-  color: black;
+  color: white;
   font-size: 16px;
   text-decoration: none;
 }
 
 a:hover {
-  font-weight: bold;
+  
 } 
 
-.active {
-  color: purple;
+.home a {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 25px;
 }
+
+/* .active {
+  color: purple;
+} */

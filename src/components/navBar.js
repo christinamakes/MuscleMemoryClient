@@ -36,7 +36,7 @@ class NavBar extends Component {
     return (
       <nav className='nav'>
         {/* <Nav> */}
-            <NavLink to='/'>Home</NavLink>
+            <NavLink style={{fontFamily:'Maven Pro', fontSize: '25px'}} to='/'>Muscle Memory</NavLink>
             {loggedIn}
         {/* </Nav> */}
       </nav>
