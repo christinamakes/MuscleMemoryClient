@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {getExercisesFromWorkout} from '../../actions/workout'
 
+import '../styles/recent-workout.css'
+
 class RecentWorkout extends React.Component {
 
   componentDidMount() {
@@ -15,12 +17,12 @@ class RecentWorkout extends React.Component {
     if (this.props.exercises) {
       exercisesUsed = this.props.exercises.map((exercises, i) => 
         <div key={i}>
-        <h1>{exercises}</h1>
+        <h2>{exercises}</h2>
         {/* <h1>{workout.exercises}</h1> */}
         </div>)
     }
   
-    return (<h1>{exercisesUsed}</h1>)
+    return (<div className='exercises'><h1>Your recent workout:</h1>{exercisesUsed}</div>)
   }
 }
 

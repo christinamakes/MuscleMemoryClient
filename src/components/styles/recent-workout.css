@@ -1,0 +1,18 @@
+.exercises {
+  font-family: 'Raleway', sans-serif;
+  
+}
+
+.exercises h2 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-left: 15px
+}
+
+.exercises h1 {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 19px;
+  font-weight: bold;
+  height: 30px;
+}

@@ -8,7 +8,7 @@ import {getExercisesFromWorkout} from '../../actions/workout';
 
 // STYLES
 import {SubmitButton} from '../styles/buttons'
-
+// import '../styles/log-workout.css'
 
 let workoutSelect;
 

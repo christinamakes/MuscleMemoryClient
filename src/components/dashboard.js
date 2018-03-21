@@ -23,7 +23,6 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='recent-workout'>
-              <h1>Your recent workout</h1>
               <RecentWorkout />
             </div>
 

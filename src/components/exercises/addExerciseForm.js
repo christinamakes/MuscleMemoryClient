@@ -7,6 +7,7 @@ import Input from '../input';
 import {required, notEmpty} from '../../validators'
 
 import {SubmitButton} from '../styles/buttons'
+import '../styles/add-exercise.css'
 
 // local devlopment
 const muscles = [{'arms':'5aa81a1ca3f42c4d7a855f91'}, 
@@ -40,6 +41,7 @@ export class ExerciseForm extends React.Component {
 
   render() {
     return (
+      <div className='add-exercise-form2'>
       <form className='add-exercise-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
         <label htmlFor='exerciseName'>Exercise Name</label>
         <Field 
@@ -70,6 +72,7 @@ export class ExerciseForm extends React.Component {
         }
         <SubmitButton type='submit' disabled={this.props.pristine || this.props.submitting}>Add Exercise</SubmitButton>
       </form>
+      </div>
     );
   }
 }
