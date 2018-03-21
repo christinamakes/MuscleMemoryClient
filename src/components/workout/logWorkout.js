@@ -7,7 +7,7 @@ import {getMusclesFromWorkout} from '../../actions/workout'
 import {getExercisesFromWorkout} from '../../actions/workout';
 
 // STYLES
-import {SubmitButton} from '../styles/buttons'
+// import {SubmitButton} from '../styles/buttons'
 // import '../styles/log-workout.css'
 
 let workoutSelect;
@@ -54,7 +54,7 @@ class LogWorkout extends React.Component {
       <form className='complete-workout-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           {workoutSelect}
 
-        <SubmitButton type='submit' disabled={this.props.pristine || this.props.submitting}>Log Workout</SubmitButton>
+        <button type='submit' disabled={this.props.pristine || this.props.submitting}>Log Workout</button>
       </form>
       </div>
     );

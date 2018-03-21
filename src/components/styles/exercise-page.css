@@ -1,4 +1,31 @@
+.exercise-page {
+  display: flex;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  position: fixed;
+  overflow: hidden;
+}
+
+.exercise-form {
+  /* flex: 1 0 45%; */
+  height: 60vh;
+  width: 30vw
+}
+
 .browse-exercises {
-  float: right;
+  /* flex: 1 0 50%; */
   border: 2px solid green;
+  height: 60vh;
+  width: 50vw
+}
+
+.picture {
+  /* flex: 0 1 100%; */
+  background-image: url('../../assets/175b4207-1158-427f-abc8-934137c6cf85_rw_1920.jpg');
+  /* background-color: purple; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -370px 0px;
+  width: 450px;
+  height: 100vh
 }
