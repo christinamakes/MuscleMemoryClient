@@ -16,12 +16,8 @@ export const newExerciseError = error => ({
     error
 });
 
-export const newExercise = (exerciseName, exerciseDescription, musclesWorked) => (dispatch, getState) => {
-  console.log('sending exercise with ' + exerciseDescription, exerciseName)
+export const newExercise = (exerciseName, musclesWorked) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  console.log(authToken);
-  console.log(musclesWorked);
-
   return fetch(`${API_BASE_URL}/exercise`, {
     method: 'POST',
     headers: {
@@ -30,7 +26,6 @@ export const newExercise = (exerciseName, exerciseDescription, musclesWorked) =>
     },
     body: JSON.stringify({
       exerciseName, 
-      exerciseDescription,
       musclesWorked: musclesWorked
     })
   })

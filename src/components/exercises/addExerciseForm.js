@@ -31,11 +31,11 @@ const muscles = [{'arms':'5aa81a1ca3f42c4d7a855f91'},
 export class ExerciseForm extends React.Component {
   
   onSubmit(values) {
-    const {exerciseName, exerciseDescription, musclesWorked} = values;
+    const {exerciseName, musclesWorked} = values;
     
     const usedMuscles = Object.keys(musclesWorked).filter(muscle => musclesWorked[muscle]) // return all muscles set to true
     
-    return this.props.dispatch(newExercise(exerciseName, exerciseDescription, usedMuscles))
+    return this.props.dispatch(newExercise(exerciseName, usedMuscles))
       .then(() => this.props.dispatch(getExercises()))
   }
 
@@ -43,23 +43,19 @@ export class ExerciseForm extends React.Component {
     return (
       <div className='add-exercise-container'>
       <form className='add-exercise-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-        <label htmlFor='exerciseName'>Exercise Name</label>
-        <Field 
-          component={Input} 
-          type='text' 
-          name='exerciseName'
-          validate={[required, notEmpty]} />
-        <label htmlFor='exerciseDescription'>Exercise Description</label>
-        <Field 
-          component={Input} 
-          type='text' 
-          name='exerciseDescription'
-          validate={[required, notEmpty]} />
+        <div className='fieldset-exercise'>
+          <label htmlFor='exerciseName'>Exercise Name</label>
+          <Field 
+            component={Input} 
+            type='text' 
+            name='exerciseName'
+            validate={[required, notEmpty]} />
+        </div>
 
         {muscles.map((muscle, index) => { 
           const name = Object.keys(muscles[index]).toString();
           return (
-            <div key={index}>
+            <div className='fieldset-exercise' key={index}>
               <label htmlFor={name}>{name}</label>
               <Field
                 component={Input}

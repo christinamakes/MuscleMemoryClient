@@ -2,10 +2,42 @@
 
 .add-exercise-container {
   font-family: 'Quicksand', sans-serif;
+  /* background-color: green; */
   height:100%;
   display:flex;
   align-items:center;
   justify-content:center;
+}
+
+.add-exercise-container form {
+  width: 45%;
+  /* background-color: yellow; */
+  margin-top: -20%;
+}
+
+
+.fieldset-exercise .form-input {
+  padding-top: 4px;
+}
+.fieldset-exercise {
+  padding-bottom: 6px
+}
+
+.add-exercise-container button {
+  margin-top: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  /* background: #aaa */
+}
+
+.form-input .form-error {
+  display: inline-flex;
+  float: right;
+  width: 70px;
+  text-align: left;
+  margin-left: 5px;
+  color: red;
+
 }
 
 /* INPUT */
@@ -36,12 +68,12 @@ input[type="checkbox"]:after{
   transition: left 0.1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 input[type="checkbox"]:checked{
-  background:#a6c7ff;
-  border-color:#8daee5;
+  background:#adffa6;
+  border-color:#90e58d;
 }
 input[type="checkbox"]:checked:after{
   left:23px;
-  border-color:#8daee5;
+  border-color:#94e58d;
 }
 
 input[type="checkbox"]:hover:not(:checked):not(:disabled):after,
