@@ -2,25 +2,27 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {getExercises} from '../../actions/exercises'
 
+import '../styles/browse-exercises.css'
 class BrowseExercises extends React.Component {
 
   componentDidMount() {
     if (!this.props.exercises) this.props.dispatch(getExercises());
   }
 
+  
   render () {
     let exercises;
-    
     if (this.props.exercises) {
       exercises = this.props.exercises.map((exer, index) => 
         <div key={index}>
-        <h1>{exer.exerciseName}</h1>
-        <h1>{exer.exerciseDescription}</h1>
-        {/* <h1>{exer.musclesWorked.toString()}</h1> */}
+        <p>{exer.exerciseName}</p>
         </div>)
     }
   
-    return (<h1>{exercises}</h1>)
+    return (<div className='browse-exercises'>
+      <h1>Your Exercises</h1>
+      <div className='exercise-list'>{exercises}</div>
+    </div>)
   }
 }
 

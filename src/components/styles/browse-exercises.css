@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+
+.browse-exercises {
+  font-family: 'Quicksand', sans-serif;
+  padding-top: 50px;
+}
+
+
+.exercise-list {
+  overflow-y: scroll;
+  height: 400px !important;
+  padding-top: 18px;
+}
+
+.browse-exercises p:hover {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.browse-exercises p {
+  padding-top: 8px;
+}
+
+.browse-exercises h1 {
+  font-size: 20px;
+  padding-top: 8%;
+}

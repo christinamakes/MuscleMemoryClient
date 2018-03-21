@@ -2,7 +2,7 @@
   overflow-y: hidden;
 }; */
 
-::-webkit-scrollbar { 
+.signupPage ::-webkit-scrollbar { 
   display: none; 
 }
 
