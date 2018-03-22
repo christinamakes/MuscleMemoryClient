@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:700');
+
+.flex-container-log {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../../assets/hero.jpg');
+  background-size: cover;
+  overflow: hidden;
+  position: fixed;
+}
+
+.row-log {
+  width: 400px;
+}
+
+.flex-item-log {
+  margin-top: 15em;
+  padding: 30px 0px 30px 0px;
+  background-color: rgba(0, 0, 0, 0.74);
+  /* background-color: yellow; */
+  width: 100%
+}
+
+.login-form {
+  margin: 0px 50px 0px 85px;
+}
+
+.fieldset-log {
+  margin-top: 10px;
+}
+
+.fieldset-log label {
+  color: white;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.login-form .form-input input{
+  margin-top: 5px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  border: none;
+  color: black;
+  height: 20px
+}
+
+.login-form button {
+  margin-left: 60px;
+  margin-top: 23px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  /* height: 26px;
+  width: 120px; */
+}
+
+.flex-container-log h1 {
+  margin-left: -30px;
+  padding-bottom: 30px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 40px;
+  color: white;
+  text-align: center
+}

@@ -32,12 +32,13 @@ export class LoginForm extends React.Component {
             );
         }
     return (
-      <div className='flex-container'>
-      <div className='row'>
-      <div className='flex-item'>
+      <div className='flex-container-log'>
+      <div className='row-log'>
+      <div className='flex-item-log'>
       <form className='login-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+      <h1>Log in</h1>
       {error}
-      <div className='fieldset'>
+      <div className='fieldset-log'>
         <label htmlFor='username'>Username</label>
         <Field 
           component={Input} 
@@ -46,7 +47,7 @@ export class LoginForm extends React.Component {
           validate={[required, notEmpty, isTrimmed]} />
         </div>
 
-        <div className='fieldset'>
+        <div className='fieldset-log'>
         <label htmlFor='password'>Password</label>
         <Field 
           component={Input} 

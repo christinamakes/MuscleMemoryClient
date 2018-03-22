@@ -1,6 +1,7 @@
 /* body {
   overflow-y: hidden;
 }; */
+@import url('https://fonts.googleapis.com/css?family=Oswald:700');
 
 .signupPage ::-webkit-scrollbar { 
   display: none; 
@@ -8,21 +9,20 @@
 
 .signupPage {
   width: 100vw;
-  height: 97vh;
-  background-image: url('../../assets/pexels-photo-685530.jpeg');
+  height: 100vh;
+  background-image: url('../../assets/hero.jpg');
   background-size: cover;
   /* background-position: center center; */
   background-repeat: no-repeat;
   overflow: hidden;
-  background-attachment: fixed;
   position: fixed
 }
 
 h3 {
-  margin-top: 30px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 40px;
-  color: white;
+  margin-top: 40px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 80px;
+  color: black;
   text-align: center
 }
 

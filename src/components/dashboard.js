@@ -1,6 +1,5 @@
 import React from 'react';
 
-import YourWorkouts from './workout/yourWorkouts';
 import LogWorkout from './workout/logWorkout'
 import WorkedMuscles from './muscles/workedMuscles'
 import requiresLogin from './requires-login';

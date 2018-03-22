@@ -7,8 +7,6 @@ import {login} from '../../actions/auth';
 import Input from '../input';
 
 //STYLES 
-import {SubmitButton} from '../styles/buttons'
-// import {FormContainer, CenterForm} from '../styles/forms';
 import '../styles/signupForm.css';
 
 import {required, notEmpty, isTrimmed, length, matches} from '../../validators'
@@ -35,7 +33,7 @@ export class SignupForm extends React.Component {
             );
         }
     return (
-      <div classname='sign'>
+      <div className='sign'>
     <div className='flex-container-sign'>
       <div className='row-sign'>
       <div className='flex-item-sign'>

@@ -1,7 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, reset} from 'redux-form';
 import {newExercise, getExercises} from '../../actions/exercises';
-import {connect} from 'react-redux';
 // import validators
 
 import Input from '../input';
@@ -29,7 +28,6 @@ const muscles = [{'arms':'5aa81a1ca3f42c4d7a855f91'},
 // {'glute':'5aafe08f734d1d1b82898085'},
 // {'back': '5aafe075734d1d1b82898072'}]
 
-let submit;
 export class ExerciseForm extends React.Component {
   
   onSubmit(values) {
