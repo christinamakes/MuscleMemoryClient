@@ -10,7 +10,7 @@ const initialState = {
   error: null
 };
 
-function authReducer(state = initialState, action) {
+export const authReducer = (state = initialState, action) => {
   switch(action.type) {
     case COMPLETE_WORKOUT_SUCCESS: 
     return {
