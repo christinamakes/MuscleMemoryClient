@@ -6,7 +6,7 @@ import requiresLogin from './requires-login';
 import './styles/exercise-page.css'
 
 
-class ExercisePage extends React.Component {
+export class ExercisePage extends React.Component {
   render() {
     return (
       <div className='exercise-page'>

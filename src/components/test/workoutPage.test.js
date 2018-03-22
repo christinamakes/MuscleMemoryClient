@@ -1,5 +1,5 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme'
+import {shallow} from 'enzyme'
 import {WorkoutPage} from '../workoutPage'
 import YourWorkouts from '../workout/yourWorkouts';
 import WorkoutForm from '../workout/createWorkout';
