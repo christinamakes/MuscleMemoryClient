@@ -13,7 +13,7 @@ const initialState = {
   error: null
 };
 
-function workoutReducer(state = initialState, action) {
+export const workoutReducer = (state = initialState, action) => {
   switch(action.type) {
     case GET_WORKOUT_SUCCESS: 
       return {

@@ -6,7 +6,7 @@ const initialState = {
   error: null,
 };
 
-function authReducer(state = initialState, action) {
+export const exerciseReducer = (state = initialState, action) =>{
   switch(action.type) {
     case NEW_EXERCISE_SUCCESS: 
       return {
@@ -30,4 +30,4 @@ function authReducer(state = initialState, action) {
   }
 }
 
-export default authReducer;
+export default exerciseReducer;
