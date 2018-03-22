@@ -8,7 +8,7 @@ export default class HomePage extends React.Component {
     return(
       <div className='homepage'>
       <div className='font-wrapper'>
-        <h1>YOU GOT THIS.</h1>
+        <h1>NEVER GIVE IN.</h1>
       </div>
       <div className='buttons'>
         <NavLink to='/login'>Log In </NavLink>

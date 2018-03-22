@@ -1,12 +1,11 @@
 import React from 'react';
 import requiresLogin from './requires-login';
-import ShowAllWorkouts from './workout/showAllWorkouts'
 import YourWorkouts from './workout/yourWorkouts';
 import WorkoutForm from './workout/createWorkout';
 
 import './styles/workout-page.css';
 
-class WorkoutPage extends React.Component {
+export class WorkoutPage extends React.Component {
   render() {
     return (
       <div className='workout-page'>

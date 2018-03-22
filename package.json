@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "create-react-class": "^15.6.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jwt-decode": "^2.2.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -23,6 +25,10 @@
     "build": "react-scripts build",
     "deploy": "npm run build && netlify deploy -p build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cover": "nyc --reporter=lcov --reporter=text-summary npm test"
+  },
+  "devDependencies": {
+    "nyc": "^11.6.0"
   }
 }
