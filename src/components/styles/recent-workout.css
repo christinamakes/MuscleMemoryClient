@@ -1,12 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 .exercises {
-  font-family: 'Raleway', sans-serif;
-  
+  font-family: 'Quicksand', sans-serif;
+  width: 400px;
+  height: 50%
 }
 
-.exercises h2 {
+.exercises p {
   margin-top: 15px;
   margin-bottom: 5px;
-  margin-left: 15px
+  margin-left: 15px;
+}
+
+.exercises-in-workout {
+  height: 300px;
 }
 
 .exercises h1 {
@@ -15,4 +22,14 @@
   font-size: 19px;
   font-weight: bold;
   height: 30px;
+}
+
+.disclaimer {
+  width: 100%;
+  height: 200px;
+  background-color: yellow;
+}
+
+.disclaimer h2 {
+
 }

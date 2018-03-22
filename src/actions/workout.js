@@ -2,7 +2,7 @@
 
 import {API_BASE_URL} from '../config'
 import {normalizeResponseErrors} from './utils'
-console.log(API_BASE_URL);
+
 
 // user submit new workout
 export const NEW_WORKOUT_SUCCESS = 'NEW_WORKOUT_SUCCESS';
@@ -24,10 +24,8 @@ export const newWorkoutRequest = error => ({
 });
 
 export const newWorkout = (workoutName, exercises) => (dispatch, getState) => {
-  console.log('sending workout with ' + exercises)
   const authToken = getState().auth.authToken;
   const userId = getState().auth.currentUser.id
-  console.log(authToken);
 
   dispatch(newWorkoutRequest())
   return fetch(`${API_BASE_URL}/workout`, {
@@ -47,7 +45,6 @@ export const newWorkout = (workoutName, exercises) => (dispatch, getState) => {
   .then(({data}) => dispatch(newWorkoutSuccess(data)))
   .catch(err => {
     // const {reason, message, location} = err;
-    console.log(err)
     dispatch(newWorkoutError(err));
     }
   );
@@ -75,7 +72,6 @@ export const completeWorkoutRequest = error => ({
 export const completeWorkout = (workout) => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   const userId = getState().auth.currentUser.id
-  console.log('adding workout to user' + workout)
 
   dispatch(completeWorkoutRequest())
   return fetch(`${API_BASE_URL}/users?userId=${userId}`, {
@@ -93,7 +89,6 @@ export const completeWorkout = (workout) => (dispatch, getState) => {
   .then((user) => dispatch(completeWorkoutSuccess(user)))
   .catch(err => {
     // const {reason, message, location} = err;
-    console.log(err)
     dispatch(completeWorkoutError(err));
     }
   );
@@ -122,7 +117,6 @@ export const getWorkouts = () => (dispatch, getState) => {
   const userId = getState().auth.currentUser.id
 
   dispatch(getWorkoutRequest())
-  console.log('muscles from workouts requested')
   return fetch(`${API_BASE_URL}/workout?userId=${userId}`, {
     method: 'GET',
     headers: {
@@ -134,7 +128,6 @@ export const getWorkouts = () => (dispatch, getState) => {
   .then(res => res.json())
   .then((data) => dispatch(getWorkoutSuccess(data)))
   .catch(err => {
-    console.log(err)
     dispatch(getWorkoutError(err));
   });
 }
@@ -163,7 +156,6 @@ export const getMusclesFromWorkout = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   const userId = getState().auth.currentUser.id
   const workoutId = getState().auth.currentUser.recentWorkout
-  console.log(workoutId)
 
   dispatch(getMusclesRequest())
   return fetch(`${API_BASE_URL}/id/muscles?userId=${userId}&workoutId=${workoutId}`, {
@@ -177,7 +169,6 @@ export const getMusclesFromWorkout = () => (dispatch, getState) => {
   .then(res => res.json())
   .then((data) => dispatch(getMusclesSuccess(data)))
   .catch((err) => {
-    console.log(err)
     dispatch(getMusclesError(err))
   });
 }
@@ -218,7 +209,6 @@ export const getExercisesFromWorkout = () => (dispatch, getState) => {
   .then(res => res.json())
   .then((data) => dispatch(getExercisesSuccess(data)))
   .catch((err) => {
-    console.log(err)
     dispatch(getExercisesError(err))
   });
 }

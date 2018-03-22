@@ -13,7 +13,6 @@ import './styles/dashboard-styles.css';
 class Dashboard extends React.Component {
 
     render() {
-      console.log('dashboard');
       return(
     
         <div className='dashboard-container'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {completeWorkout, getWorkouts} from '../../actions/workout'
-import {Field, reduxForm} from 'redux-form';
+import {Field, reduxForm, reset} from 'redux-form';
 import Input from '../input';
 import {getMusclesFromWorkout} from '../../actions/workout'
 import {getExercisesFromWorkout} from '../../actions/workout';
@@ -26,7 +26,7 @@ class LogWorkout extends React.Component {
     return this.props.dispatch(completeWorkout(checkedWorkout))
       .then(() => this.props.dispatch(getMusclesFromWorkout()))
       .then(() => this.props.dispatch(getExercisesFromWorkout()))
-      .then(() => console.log("logging workout " + values))
+      .then(() => this.props.dispatch(reset('logWorkout')))
   }
 
   

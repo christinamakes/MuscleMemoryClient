@@ -22,7 +22,7 @@
   /* background: #aaa */
 }
 
-.exercises {
+.exercises-list {
   overflow-y: scroll;
   height: 400px !important;
   width: 250px;

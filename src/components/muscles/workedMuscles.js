@@ -26,9 +26,6 @@ class WorkedMuscles extends React.Component {
           <Strain
             usedMuscles={usedMuscles} />
         </div>
-        <div className='disclaimer'>
-          <p>Do not overwork your muscles</p>
-        </div>
       </div>
       )
   }

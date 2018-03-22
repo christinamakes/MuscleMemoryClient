@@ -64,7 +64,7 @@ export class WorkoutForm extends React.Component {
               validate={[required, notEmpty]} />
           </div>
 
-          <div className='exercises'>{exerciseSelect}</div>
+          <div className='exercises-list'>{exerciseSelect}</div>
 
           <button type='submit' disabled={this.props.pristine || this.props.submitting}>Add Workout</button>
         </form>

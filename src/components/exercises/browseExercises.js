@@ -20,7 +20,7 @@ class BrowseExercises extends React.Component {
     }
   
     return (<div className='browse-exercises'>
-      <h1>Your Exercises</h1>
+      <h1>All Exercises</h1>
       <div className='exercise-list'>{exercises}</div>
     </div>)
   }

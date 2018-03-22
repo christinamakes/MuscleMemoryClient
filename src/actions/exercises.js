@@ -2,7 +2,7 @@ import {SubmissionError} from 'redux-form'
 
 import {API_BASE_URL} from '../config'
 import {normalizeResponseErrors} from './utils'
-console.log(API_BASE_URL);
+
 
 export const NEW_EXERCISE_SUCCESS = 'NEW_EXERCISE_SUCCESS';
 export const newExerciseSuccess = data => ({

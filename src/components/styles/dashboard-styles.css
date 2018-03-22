@@ -25,12 +25,13 @@
 }
 
 .recent-workout{
-  /* background-color: #FF9438; */
+  background-color: #FF9438;
   width: 30vw;
   height: 300px;
   /* min-width:20vw; */
   /* max-width:30vw */
 }
+
 
 
 .worked-muscles {

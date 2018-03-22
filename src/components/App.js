@@ -17,8 +17,6 @@ import {refreshAuthToken} from '../actions/auth'
 class App extends Component {
   
   componentDidUpdate(prevProps) {
-    // console.log(this.props)
-    // console.log(prevProps);
     if (!prevProps.loggedIn && this.props.loggedIn) {
         // refresh token when logged in
         this.startPeriodicRefresh();
@@ -33,7 +31,6 @@ class App extends Component {
   }
 
   startPeriodicRefresh() {
-    console.log('start');
     this.refreshInterval = setInterval(
       () => this.props.dispatch(refreshAuthToken()),
       60 * 60 * 1000 // refresh auth token every hour
@@ -47,19 +44,8 @@ class App extends Component {
     clearInterval(this.refreshInterval)
   }
 
-  // onMouseLeave(e) {
-  //   console.log('clientY:', e.nativeEvent.clientY);
-  // }
   render() {
-    console.log('app log in')
     return (
-      // <div className="App">
-      //     <Tilt className="Tilt" style={{ height: 1750, width: 1750 }} options={{ max : 5, scale: 1 }} onMouseLeave={this.onMouseLeave}>
-      //       <div className="Tilt-inner">
-      //       <p>hi</p>
-      //       </div>
-      //     </Tilt>
-      // </div>
       <div>
         <NavBar />
         <Route exact path='/register' component={SignupPage} />

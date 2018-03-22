@@ -8,7 +8,6 @@ class RecentWorkout extends React.Component {
 
   componentDidMount() {
     if (this.props.loggedIn) this.props.dispatch(getExercisesFromWorkout())
-    console.log('recent workout dispatched');
   }
 
   render() {
@@ -17,12 +16,25 @@ class RecentWorkout extends React.Component {
     if (this.props.exercises) {
       exercisesUsed = this.props.exercises.map((exercises, i) => 
         <div key={i}>
-        <h2>{exercises}</h2>
+        <p>{exercises}</p>
         {/* <h1>{workout.exercises}</h1> */}
         </div>)
     }
   
-    return (<div className='exercises'><h1>Your recent workout:</h1>{exercisesUsed}</div>)
+    return (
+    <div className='exercises'>
+      <h1>Your recent workout:</h1>
+      <div className='exercises-in-workout'>{exercisesUsed}</div>
+      <div className='disclaimer'>
+        <h2>Exercise tips</h2>
+          <ul>
+            <li>Overworked muscles can put you at risk for injury</li>
+            <li>Aim to work each muscle group at least once a week</li>
+            <li>Compound movements, such as squats, work more muscles than you think!</li>
+          </ul>
+      </div>
+    </div>
+    )
   }
 }
 
