@@ -1,0 +1,26 @@
+.complete-workout-container {
+  /* background-color: blue; */
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  padding: 0 5em 0 5em;
+  height: 90%;
+  border-left: 1px solid lightgray;
+}
+
+.complete-workout-container h1 {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 19px;
+  font-weight: bold;
+  height: 30px;
+}
+
+.complete-workout-container button {
+  margin-top: 20px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+.fieldset-log-workout {
+
+}

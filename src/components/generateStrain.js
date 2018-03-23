@@ -5,6 +5,7 @@
 //   "Legs": 1
 // }
 import React from 'react'
+import './styles/strain.css';
 
 export default function Strain(props) {
   let strainValues;
@@ -29,7 +30,7 @@ export default function Strain(props) {
   strainValues = generateStrain(props.usedMuscles)
 
   const strainText = Object.keys(strainValues).map((muscle, index) => {
-    return <h1>{muscle}: {strainValues[muscle]}</h1>
+    return <p>{muscle}: {strainValues[muscle]}</p>
   })
 
   return (

@@ -25,7 +25,6 @@ class Dashboard extends React.Component {
             </div>
 
             <div className='log-workout'>
-              <h1>Log a workout</h1>
               <LogWorkout />
             </div>
           </div>

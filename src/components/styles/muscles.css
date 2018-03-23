@@ -1,18 +1,4 @@
-.muscleSVG {
-  width: 90%;
-  height: 90%;
-  stroke-width: 15;
-  stroke-opacity: 0
-}
-
-/* .Chest:hover, .Arms:hover, .Abs:hover, .Neck:hover, .Legs:hover {
-  fill: orange;
-}
-
-.Chest:active {
-  fill: green;
-} */
-        
+  
 .background {
   fill: #9ac8eb;
 }

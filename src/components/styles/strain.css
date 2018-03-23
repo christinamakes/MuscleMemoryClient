@@ -1,0 +1,14 @@
+.muscle-strain {
+  padding-top: 5px;
+}
+
+.muscle-strain p {
+  font-family: 'Raleway', sans-serif;
+  padding-top: 5px;
+  text-align: left;
+  margin-left: 35%
+}
+
+.muscle-strain p:hover {
+  font-weight: bold;
+}

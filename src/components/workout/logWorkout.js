@@ -8,7 +8,7 @@ import {getExercisesFromWorkout} from '../../actions/workout';
 
 // STYLES
 // import {SubmitButton} from '../styles/buttons'
-// import '../styles/log-workout.css'
+import '../styles/log-workout.css'
 
 let workoutSelect;
 
@@ -36,7 +36,7 @@ class LogWorkout extends React.Component {
         const name = workout.workoutName;
         const wId = workout._id;
         return (
-          <div key={index}>
+          <div className='fieldset-log-workout' key={index}>
             <label htmlFor={name}>{name}</label>
             <Field
               component={Input}
@@ -49,12 +49,13 @@ class LogWorkout extends React.Component {
       };
     
     return (
-      <div>
+      <div className='complete-workout-container'>
       
       <form className='complete-workout-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+      <h1>Record a workout</h1>
           {workoutSelect}
 
-        <button type='submit' disabled={this.props.pristine || this.props.submitting}>Log Workout</button>
+        <button type='submit' disabled={this.props.pristine || this.props.submitting}>Record</button>
       </form>
       </div>
     );

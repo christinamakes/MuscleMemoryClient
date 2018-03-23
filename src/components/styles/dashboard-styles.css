@@ -10,13 +10,9 @@
 }
 
 .dashboard-container {
-  /* display: flex; */
-  /* background-image: url('../../assets/pexels-photo-931321.jpeg'); */
   /* background-color: green; */
-  background-size: cover;
-  /* height: 95vh; */
-  padding-top: 10px
-  
+  position: fixed;
+  padding-top: 10px 
 }
 
 .inner-container {
@@ -24,13 +20,14 @@
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
   /* background-color: blue */
 }
 
 .recent-workout{
-  background-color: #FF9438;
-  width: 30vw;
-  height: 300px;
+  /* background-color: #FF9438; */
+  height: 100%;
+  /* height: 80vh; */
   /* min-width:20vw; */
   /* max-width:30vw */
 }
@@ -41,7 +38,8 @@
   /* border: 2px solid yellow; */
   /* background-color: rgb(102, 102, 101); */
   min-width: 40vw;
-  max-width: 40vw
+  max-width: 40vw;
+  height: 100%;
 }
 
 .log-workout {
