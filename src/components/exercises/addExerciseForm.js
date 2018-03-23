@@ -10,23 +10,23 @@ import {SubmitButton} from '../styles/buttons'
 import '../styles/add-exercise.css'
 
 
-// // local devlopment
-// const muscles = [{'arms':'5aa81a1ca3f42c4d7a855f91'}, 
-// {'legs':'5aa7efd0ead454399b4faf7f'}, 
-// {'shoulders': '5aa81a1ca3f42c4d7a855f94'},
-// {'abs':'5aa81a1ca3f42c4d7a855f96'}, 
-// {'chest': '5aa81a1ca3f42c4d7a855f97'},
-// {'glute':'5aa81a1ca3f42c4d7a855f95'},
-// {'back': '5aa81a1ca3f42c4d7a855f93'}]
+// local devlopment
+const muscles = [{'arms':'5aa81a1ca3f42c4d7a855f91'}, 
+{'legs':'5aa7efd0ead454399b4faf7f'}, 
+{'shoulders': '5aa81a1ca3f42c4d7a855f94'},
+{'abs':'5aa81a1ca3f42c4d7a855f96'}, 
+{'chest': '5aa81a1ca3f42c4d7a855f97'},
+{'glute':'5aa81a1ca3f42c4d7a855f95'},
+{'back': '5aa81a1ca3f42c4d7a855f93'}]
 
 // MLAB
-const muscles = [{'arms':'5aafe00c734d1d1b82898043'}, 
-{'legs':'5aafe06b734d1d1b8289806e'}, 
-{'shoulders': '5aafe081734d1d1b82898081'},
-{'abs':'5aafe09a734d1d1b8289808e'}, 
-{'chest': '5aafe0a4734d1d1b82898090'},
-{'glute':'5aafe08f734d1d1b82898085'},
-{'back': '5aafe075734d1d1b82898072'}]
+// const muscles = [{'arms':'5aafe00c734d1d1b82898043'}, 
+// {'legs':'5aafe06b734d1d1b8289806e'}, 
+// {'shoulders': '5aafe081734d1d1b82898081'},
+// {'abs':'5aafe09a734d1d1b8289808e'}, 
+// {'chest': '5aafe0a4734d1d1b82898090'},
+// {'glute':'5aafe08f734d1d1b82898085'},
+// {'back': '5aafe075734d1d1b82898072'}]
 
 export class ExerciseForm extends React.Component {
   

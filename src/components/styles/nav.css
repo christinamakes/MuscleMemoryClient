@@ -1,6 +1,7 @@
 .nav {
   display: flex;
   height: 60px;
+  width: 100%;
   align-items: center;
   list-style: none;
   /* background: linear-gradient(to right, #fc4a1a, #f7b733) */

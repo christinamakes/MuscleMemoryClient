@@ -2,6 +2,8 @@ import React from 'react';
 import {Field, reduxForm} from 'redux-form';
 // import login action
 // import validators
+import { Route , withRouter} from 'react-router-dom';
+import {connect} from 'react-redux'
 import {registerUser} from '../../actions/users';
 import {login} from '../../actions/auth';
 import Input from '../input';
@@ -20,7 +22,12 @@ export class SignupForm extends React.Component {
     const {username, password, firstName, lastName} = values;
     const user = {username, password, firstName, lastName}
     return this.props.dispatch(registerUser(user))
-      .then(() => this.props.dispatch(login(username,password)));
+      .then(() => this.props.dispatch(login(username,password)))
+      .then(() => {
+        if (this.props.loggedIn) {
+          this.props.history.push("/dashboard")
+        }
+      });
   }
 
   render() {
@@ -95,10 +102,11 @@ export class SignupForm extends React.Component {
   }
 }
 
-export default reduxForm({
-  form: 'signup',
-  // onSubmitFail: (errors, dispatch) => {
-    // dispatch(focus('signup', Object.keys(errors[0])))
-  // }
-})(SignupForm);
 
+
+export const mapStateToProps = (state,props) => ({
+  loggedIn: state.auth.currentUser !== null
+})
+
+export default reduxForm({
+  form: 'signup'})(withRouter(connect(mapStateToProps)((SignupForm))));
