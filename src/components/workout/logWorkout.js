@@ -15,11 +15,13 @@ let workoutSelect;
 class LogWorkout extends React.Component {
 
   componentDidMount() {
-    if (!this.props.workouts) this.props.dispatch(getWorkouts());
+    this.props.dispatch(getWorkouts());
+    console.log("LOG WORKOUT MOUNTED");
   }
 
   onSubmit(values) {
     const {workoutSelected} = values;
+    console.log('submitted');
     
     const checkedWorkout = Object.keys(workoutSelected).filter(workout => workoutSelected[workout]) // return all muscles set to true
   
@@ -47,6 +49,7 @@ class LogWorkout extends React.Component {
             </div>)
         })
       };
+
     
     return (
       <div className='complete-workout-container'>
@@ -63,7 +66,7 @@ class LogWorkout extends React.Component {
 }
 
 export const mapStatetoProps = (state,props) => ({
-  workouts: state.workout.workouts,
+  workouts: state.workout.workouts ? state.workout.workouts : [],
   loggedIn: state.auth.currentUser != null
 }) 
 
