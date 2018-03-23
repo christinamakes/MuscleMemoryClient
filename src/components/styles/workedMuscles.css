@@ -16,6 +16,10 @@
 .muscleStrain-container {
   /* background-color: orange; */
   border-top: 1px solid lightgray;
+  margin-left: -30px;
   margin-top: 25px;
   height: 150px;
+  column-count: 2;
+  column-rule: 1px solid lightblue;
+  /* column-width: 10px; */
 }
