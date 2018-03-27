@@ -1,4 +1,5 @@
 import {NEW_EXERCISE_ERROR, NEW_EXERCISE_SUCCESS, NEW_EXERCISE_REQUEST} from '../actions/exercises';
+import {CLEAR_AUTH} from '../actions/auth';
 
 const initialState = {
   exercises: null,
@@ -26,6 +27,8 @@ export const exerciseReducer = (state = initialState, action) =>{
         ...state,
         loading:true
       }
+    case CLEAR_AUTH: 
+      return initialState
     default: return state;
   }
 }

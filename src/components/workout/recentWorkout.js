@@ -7,7 +7,7 @@ import '../styles/recent-workout.css'
 class RecentWorkout extends React.Component {
 
   componentDidMount() {
-    if (this.props.loggedIn) this.props.dispatch(getExercisesFromWorkout())
+    if (this.props.loggedIn && this.props.exercises.length > 0) this.props.dispatch(getExercisesFromWorkout())
   }
 
   render() {
@@ -47,7 +47,7 @@ class RecentWorkout extends React.Component {
 
 export const mapStateToProps = (state, props) => ({
   loggedIn: state.auth.currentUser !== null,
-  exercises: state.workout.recentWorkout ? state.workout.recentWorkout : []
+  exercises: state.workout.recentWorkout ? state.workout.recentWorkout : [],
 });
 
 export default connect(mapStateToProps)(RecentWorkout);

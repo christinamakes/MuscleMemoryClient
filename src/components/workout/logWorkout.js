@@ -67,7 +67,7 @@ class LogWorkout extends React.Component {
 
 export const mapStatetoProps = (state,props) => ({
   workouts: state.workout.workouts ? state.workout.workouts : [],
-  loggedIn: state.auth.currentUser != null
+  loggedIn: state.auth.currentUser != null,
 }) 
 
 

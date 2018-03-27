@@ -10,7 +10,7 @@ import '../styles/workedMuscles.css'
 class WorkedMuscles extends React.Component {
 
   componentDidMount() {
-    if (this.props.loggedIn && this.props.recentWorkout) this.props.dispatch(getMusclesFromWorkout());
+    if (this.props.loggedIn && this.props.recentWorkout.length > 0) this.props.dispatch(getMusclesFromWorkout());
   }
 
   render () {

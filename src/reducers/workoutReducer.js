@@ -3,6 +3,8 @@ import {GET_WORKOUT_ERROR, GET_WORKOUT_SUCCESS, GET_WORKOUT_REQUEST} from '../ac
 import {GET_MUSCLES_ERROR, GET_MUSCLES_SUCCESS, GET_MUSCLES_REQUEST} from '../actions/workout';
 import {COMPLETE_WORKOUT_ERROR, COMPLETE_WORKOUT_SUCCESS, COMPLETE_WORKOUT_REQUEST} from '../actions/workout';
 import {GET_EXERCISES_ERROR, GET_EXERCISES_SUCCESS, GET_EXERCISES_REQUEST} from '../actions/workout';
+import {CLEAR_AUTH} from '../actions/auth';
+
 
 
 const initialState = {
@@ -102,6 +104,8 @@ export const workoutReducer = (state = initialState, action) => {
         error: null,
         recentWorkout: action.data
       }
+    case CLEAR_AUTH: 
+      return initialState
     default: return state;
   }
 }
