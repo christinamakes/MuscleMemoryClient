@@ -16,12 +16,12 @@ class LogWorkout extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(getWorkouts());
-    console.log("LOG WORKOUT MOUNTED");
+    // console.log("LOG WORKOUT MOUNTED");
   }
 
   onSubmit(values) {
     const {workoutSelected} = values;
-    console.log('submitted');
+    // console.log('submitted');
     
     const checkedWorkout = Object.keys(workoutSelected).filter(workout => workoutSelected[workout]) // return all muscles set to true
   

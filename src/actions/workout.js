@@ -156,7 +156,7 @@ export const getMusclesFromWorkout = () => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
   const userId = getState().auth.currentUser.id
   const workoutId = getState().auth.currentUser.recentWorkout[0]
-  console.log(workoutId);
+  // console.log(workoutId);
   dispatch(getMusclesRequest())
   return fetch(`${API_BASE_URL}/id/muscles?userId=${userId}&workoutId=${workoutId}`, {
     method: 'GET',

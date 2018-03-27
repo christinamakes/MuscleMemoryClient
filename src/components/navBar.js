@@ -13,7 +13,7 @@ class NavBar extends Component {
   render() {
     let loggedIn;
     if (this.props.loggedIn) {
-      console.log('loggedin!!')
+      // console.log('loggedin!!')
       loggedIn = <div className='loggedin'>
           <NavLink to='/workouts' activeClassName="active">My Workouts</NavLink>
           <NavLink to='/exercises'>Exercises</NavLink>
