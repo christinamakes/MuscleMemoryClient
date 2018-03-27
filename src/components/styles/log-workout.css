@@ -1,3 +1,17 @@
+@media only screen and (max-width: 800px) { 
+  .complete-workout-container {
+    width: 100vw;
+    font-family: 'Raleway', sans-serif;
+    border-left: 1px solid lightgray;
+    margin-bottom: 30px
+  }
+
+  .complete-workout-container h1 {
+    text-align: center;
+    font-size: 1px;
+  }
+}
+
 .complete-workout-container {
   /* background-color: blue; */
   font-family: 'Raleway', sans-serif;

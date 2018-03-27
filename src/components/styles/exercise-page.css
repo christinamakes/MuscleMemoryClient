@@ -1,28 +1,43 @@
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
 
-  div.exercise-page {
+  .exercise-page {
     display: flex;
     flex-direction: column;
-    overflow: visible;
-    /* position: relative; */
+    /* overflow: visible; */
   }
   
-  div.picture {
+  .picture {
     width: 0;
-    height: 0
+    height: 0;
+    display: none;
+    visibility: hidden;
+  }
+
+  .exercise-form {
+    display: block;
+    padding-left: 50px;
+  }
+  
+  .browse-exercises {
+    display: block;
+    padding-left: 50px;
   }
 }
 
 .exercise-page {
+  /* position: relative; */
   display: flex;
   /* flex-direction: row;
   flex-wrap: wrap; */
-  position: fixed;
-  overflow: hidden;
+  /* position: fixed; */
+  /* overflow: hidden; */
 }
 
 .exercise-form {
   /* flex: 1 0 45%; */
+  /* position: absolute;
+  top: 0;
+  left: 35%; */
   height: 100vh;
   width: 32.5vw;
   /* margin-top: 5%; */
@@ -30,6 +45,9 @@
 
 .browse-exercises {
   /* flex: 1 0 50%; */
+  /* position: absolute;
+  top: 0;
+  left: 50%; */
   height: 100vh;
   width: 32.5vw
 }
@@ -43,3 +61,4 @@
   width: 35vw;
   height: 100vh
 }
+

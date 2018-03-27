@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
+
+@media only screen and (max-width: 900px) {
+  .add-exercise-container {
+    display: block;
+    font-family: 'Quicksand', sans-serif;
+    /* background-color: green; */
+    width: auto;
+    /* display:flex; */
+    /* flex-direction: column; */
+    /* align-items:center; */
+    /* justify-content:center; */
+  }
+
+  .add-exercise-container form {
+    /* width: 45%; */
+    width: auto;
+    margin-top: 10px;
+    /* background-color: yellow; */
+    /* margin-top: -20%; */
+  }
+}
+
 .add-exercise-container {
   font-family: 'Quicksand', sans-serif;
   /* background-color: green; */

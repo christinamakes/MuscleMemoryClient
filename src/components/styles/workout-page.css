@@ -1,27 +1,43 @@
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
 
-  div.workout-page {
+  .workout-page {
     display: flex;
     flex-direction: column;
-    overflow: visible;
-    position: relative;
+    /* overflow: visible; */
+  }
+  
+  .workout-picture {
+    width: 0;
+    height: 0;
+    display: none;
+    visibility: hidden;
   }
 
-  div.workout-picture {
-    display: none;
+  .workout--form {
+    display: block;
+    padding-left: 50px;
+  }
+  
+  .your-workouts {
+    display: block;
+    padding-left: 50px;
   }
 }
 
 .workout-page {
+  /* position: relative; */
   display: flex;
   /* flex-direction: row;
   flex-wrap: wrap; */
-  position: fixed;
-  overflow: hidden;
+  /* position: fixed; */
+  /* overflow: hidden; */
 }
 
 .workout-form {
   /* flex: 1 0 45%; */
+  /* position: absolute;
+  top: 0;
+  left: 35%; */
   height: 100vh;
   width: 32.5vw;
   /* margin-top: 5%; */
@@ -29,16 +45,20 @@
 
 .your-workouts {
   /* flex: 1 0 50%; */
+  /* position: absolute;
+  top: 0;
+  left: 50%; */
   height: 100vh;
   width: 32.5vw
 }
 
 .workout-picture {
   /* flex: 0 1 100%; */
-  background-image: url('../../assets/pexels-photo-931321.jpeg');
+  background-image: url('../../assets/pexels-photo-685530.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -370px 0px;
   width: 35vw;
   height: 100vh
 }
+
