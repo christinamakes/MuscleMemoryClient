@@ -1,28 +1,3 @@
-@media only screen and (max-width: 900px) {
-
-  .workout-page {
-    display: flex;
-    flex-direction: column;
-    /* overflow: visible; */
-  }
-  
-  .workout-picture {
-    width: 0;
-    height: 0;
-    display: none;
-    visibility: hidden;
-  }
-
-  .workout--form {
-    display: block;
-    padding-left: 50px;
-  }
-  
-  .your-workouts {
-    display: block;
-    padding-left: 50px;
-  }
-}
 
 .workout-page {
   /* position: relative; */
@@ -62,3 +37,25 @@
   height: 100vh
 }
 
+@media only screen and (max-width: 440px) {
+
+  .workout-page {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .workout-picture {
+    width: 0;
+    height: 0;
+    display: none;
+    visibility: hidden;
+  }
+
+  .workout-form {
+    width: 100vw;
+  }
+  
+  .your-workouts {
+    width: 100vw
+  }
+}

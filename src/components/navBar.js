@@ -29,7 +29,7 @@ class NavBar extends Component {
     if (this.props.loggedIn) {
       // console.log('loggedin!!')
       loggedIn = <div className='loggedin'>
-        <NavLink to='/workouts' onClick={() => this.closeMenu()}>My Workouts</NavLink>
+        <NavLink to='/workouts' onClick={() => this.closeMenu()}>Create Workout</NavLink>
         <NavLink to='/exercises' onClick={() => this.closeMenu()}>Exercises</NavLink>
         <NavLink to='/dashboard' onClick={() => this.closeMenu()}>Dashboard</NavLink>
         <NavLink to='/' onClick={() => {

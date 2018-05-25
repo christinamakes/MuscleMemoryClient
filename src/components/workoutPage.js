@@ -11,7 +11,7 @@ export class WorkoutPage extends React.Component {
       <div className='workout-page'>
         <div className='workout-picture' title='Man holding a barbell'></div>
         <div className='workout-form'><WorkoutForm /></div>
-        <div className='your-workouts'><YourWorkouts /></div>
+        {/* <div className='your-workouts'><YourWorkouts /></div> */}
       </div>
     )
   }
