@@ -35,6 +35,14 @@
   border-radius: 3px;
 }
 
-.fieldset-log-workout {
+.workoutSelect label{
+  display: none
+}
 
+.workoutSelect button {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding-right: 5px;
+  margin: 0 2px 0 5px;
 }

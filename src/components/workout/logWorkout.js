@@ -40,7 +40,7 @@ class LogWorkout extends React.Component {
             name='logWorkout'
             component={Combobox}
             data={this.props.workouts}
-            defaultValue={this.props.workouts[0]}
+            placeholder={'Select workout to log'}
             caseSensitive={false}
             valueField='_id'
             textField='workoutName'
@@ -58,7 +58,7 @@ class LogWorkout extends React.Component {
         {/* className='complete-workout-form'  */}
         <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
           <h1>Record a workout</h1>
-          {workoutSelect}
+          <div className='workoutSelect'>{workoutSelect}</div>
 
           <button type="submit">Log workout</button>
 
