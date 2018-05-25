@@ -8,6 +8,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jwt-decode": "^2.2.0",
     "react": "^16.2.0",
+    "react-burger-menu": "^2.4.4",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
