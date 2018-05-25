@@ -33,6 +33,7 @@ class NavBar extends Component {
         <NavLink to='/exercises' onClick={() => this.closeMenu()}>Exercises</NavLink>
         <NavLink to='/dashboard' onClick={() => this.closeMenu()}>Dashboard</NavLink>
         <NavLink to='/' onClick={() => {
+          this.closeMenu();
           this.props.dispatch(clearAuth())
           // FIGURE OUT WHERE OTHER REDIRECT IS COMING FROM
           // .then(() => {

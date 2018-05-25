@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 // import validators
 
 import Input from '../input';
-import { required, notEmpty } from '../../validators'
+import { required, notEmpty, arrayNotEmpty } from '../../validators'
 
 import '../styles/create-workout.css'
 
@@ -53,6 +53,7 @@ export class WorkoutForm extends React.Component {
             textField={'exerciseName'}
             valueField={'_id'}
             allowCreate={false}
+            validate={[arrayNotEmpty]}
           />
         </div>)
     } else {
@@ -69,12 +70,12 @@ export class WorkoutForm extends React.Component {
               component={Input}
               type='text'
               name='workoutName'
-              validate={[required, notEmpty]} />
+              validate={[required]} />
           </div>
 
           <div className='exerciseSelect'>{exerciseSelect}</div>
 
-          <button type='submit' disabled={this.props.pristine || this.props.submitting}>Add Workout</button>
+          <button type='submit' disabled={this.props.pristine || this.props.submitting || this.props.invalid}>Add Workout</button>
         </form>
       </div>
     );

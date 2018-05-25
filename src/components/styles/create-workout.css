@@ -43,12 +43,17 @@
 .fieldset-workout .form-input {
   padding-top: 4px;
 }
+
 .fieldset-workout {
   padding-bottom: 6px
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 440px) {
   .workout-form-container form {
     width: 100vw;
+  }
+
+  .workout-form-container .form-input input {
+    border: 1px solid rgb(204,204,204, .8)
   }
 }
