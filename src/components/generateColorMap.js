@@ -12,27 +12,29 @@ import './styles/svg.css'
 export default function SVGUsage(props) {
   let colorMap;
   const generateColorMap = (dbValues) => {
-    const INTENSITY_MAP = {
-      1: '#709951', // used
-      2: '#FDE63B', // worked
-      3: '#f79b07', // intensely worked
-      4: '#E7430E' // strained
-    };
-    const MAX_INTENSITY = 4
-    //Math.max.apply(null, Object.keys(INTENSITY_MAP));
-    
-    return Object.entries(dbValues)
-    // [['Arms', 61], ['Glutes', 1] ...]
-      .reduce(( muscleUseMap, [groupName, useLvl] ) => {
-        muscleUseMap[groupName] = (useLvl <= MAX_INTENSITY) ? INTENSITY_MAP[useLvl] : INTENSITY_MAP[MAX_INTENSITY];
-        return muscleUseMap;
-      }, {});
+    if (dbValues !== []) {
+      const INTENSITY_MAP = {
+        1: '#709951', // used
+        2: '#FDE63B', // worked
+        3: '#f79b07', // intensely worked
+        4: '#E7430E' // strained
+      };
+      const MAX_INTENSITY = 4
+      //Math.max.apply(null, Object.keys(INTENSITY_MAP));
+
+      return Object.entries(dbValues)
+        // [['Arms', 61], ['Glutes', 1] ...]
+        .reduce((muscleUseMap, [groupName, useLvl]) => {
+          muscleUseMap[groupName] = (useLvl <= MAX_INTENSITY) ? INTENSITY_MAP[useLvl] : INTENSITY_MAP[MAX_INTENSITY];
+          return muscleUseMap;
+        }, {});
+    }
   }
 
   colorMap = generateColorMap(props.usedMuscles)
   return (
     <div className='svg'>
-    <MuscleMap 
+      <MuscleMap
         chestColor={colorMap.Chest || '#5ca2be'}
         armColor={colorMap.Arms || '#5ca2be'}
         shoulderColor={colorMap.Shoulders || '#5ca2be'}

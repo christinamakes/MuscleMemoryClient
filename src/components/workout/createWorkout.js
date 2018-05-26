@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm, reset } from 'redux-form';
+import { Field, reduxForm, reset, formValueSelector } from 'redux-form';
 import { newWorkout, getWorkouts } from '../../actions/workout'
 import { Multiselect, onChange } from 'react-widgets'
 import 'react-widgets/dist/css/react-widgets.css'
@@ -14,13 +14,15 @@ import { required, notEmpty, arrayNotEmpty } from '../../validators'
 import '../styles/create-workout.css'
 
 import { getExercises } from '../../actions/exercises'
+const countBy = require('lodash.countby');
+
 
 let exerciseSelect;
 
-console.log(onChange)
 export class WorkoutForm extends React.Component {
   constructor(props) {
     super(props)
+    this.selector = formValueSelector('workout')
     this.state = {
       muscles: []
     }
@@ -31,21 +33,17 @@ export class WorkoutForm extends React.Component {
 
 
   onSubmit(values) {
-    console.log(values);
     const workoutName = values.workoutName
     const exercises = values.workoutArray.map(exercise => exercise._id)
 
     const musclesCurrentlyUsed = this.state.muscles.map(exercise => exercise.musclesWorked.name);
-    console.log(this.state.muscles)
-    console.log(musclesCurrentlyUsed, 'currently');
-    // return this.props.dispatch(newWorkout(workoutName, exercises))
-    //   .then(() => this.props.dispatch(getWorkouts()))
-    //   .then(() => this.props.dispatch(reset('workout')))
-    //   .then(() => console.log('success!'))
+    return this.props.dispatch(newWorkout(workoutName, exercises))
+      .then(() => this.props.dispatch(getWorkouts()))
+      .then(() => this.props.dispatch(reset('workout')))
+      .then(() => console.log('success!'))
   }
 
   render() {
-    console.log(this.state.muscles)
     const renderMultiselect = ({ input, ...rest }) =>
       <Multiselect {...input}
         onBlur={() => input.onBlur()}
@@ -65,7 +63,6 @@ export class WorkoutForm extends React.Component {
             valueField={'_id'}
             allowCreate={false}
             validate={[arrayNotEmpty]}
-            onChange={(e) => console.log(e)}
           />
         </div>)
     } else {
@@ -94,7 +91,7 @@ export class WorkoutForm extends React.Component {
         <div className='create-workout-container'>
           <div className='svg-container-create'>
             <SVGUsage
-              usedMuscles={this.state.muscles} />
+              usedMuscles={this.props.countedNames} />
           </div>
         </div>
       </div>
@@ -102,16 +99,27 @@ export class WorkoutForm extends React.Component {
   }
 }
 
+const selector = formValueSelector('workout')
 
-export const mapStatetoProps = (state, props) => ({
-  exercises: state.exercise.exercises,
-  loggedIn: state.auth.currentUser != null
-})
+export const mapStatetoProps = (state, props) => {
+  const exercisesSelector = selector(state, 'workoutArray') || []
+  const exerciseMap = exercisesSelector.map(exercise => exercise.musclesWorked.map(muscle => muscle.name));
+  const newArr = [].concat.apply([], exerciseMap);
+  let countedNames = countBy(newArr, (name) => {
+    return name;
+  });
+
+  return {
+    exercises: state.exercise.exercises,
+    loggedIn: state.auth.currentUser != null,
+    countedNames
+  }
+}
 
 
-export default reduxForm({
+WorkoutForm = reduxForm({
   form: 'workout',
-  // onSubmitFail: (errors, dispatch) => {
-  // dispatch(focus('signup', Object.keys(errors[0])))
-  // }
-})(connect(mapStatetoProps)(WorkoutForm));
+})(WorkoutForm);
+
+
+export default WorkoutForm = (connect(mapStatetoProps)(WorkoutForm))
