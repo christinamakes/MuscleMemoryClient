@@ -1,23 +1,25 @@
 import React from 'react';
 import { Field, reduxForm, reset, formValueSelector } from 'redux-form';
-import { newWorkout, getWorkouts } from '../../actions/workout'
-import { Multiselect, onChange } from 'react-widgets'
-import 'react-widgets/dist/css/react-widgets.css'
 import { connect } from 'react-redux';
+import { Multiselect } from 'react-widgets'
+import 'react-widgets/dist/css/react-widgets.css'
+
+// components
 import SVGUsage from '../generateColorMap';
+import Input from '../input';
+
+// actions
+import { newWorkout, getWorkouts } from '../../actions/workout'
+import { getExercises } from '../../actions/exercises'
 
 // import validators
+import { required, arrayNotEmpty } from '../../validators'
 
-import Input from '../input';
-import { required, notEmpty, arrayNotEmpty } from '../../validators'
-
+// styles
 import '../styles/create-workout.css'
 
-import { getExercises } from '../../actions/exercises'
+// etc.
 const countBy = require('lodash.countby');
-
-
-let exerciseSelect;
 
 export class WorkoutForm extends React.Component {
   constructor(props) {
@@ -35,8 +37,6 @@ export class WorkoutForm extends React.Component {
   onSubmit(values) {
     const workoutName = values.workoutName
     const exercises = values.workoutArray.map(exercise => exercise._id)
-
-    const musclesCurrentlyUsed = this.state.muscles.map(exercise => exercise.musclesWorked.name);
     return this.props.dispatch(newWorkout(workoutName, exercises))
       .then(() => this.props.dispatch(getWorkouts()))
       .then(() => this.props.dispatch(reset('workout')))
@@ -44,13 +44,14 @@ export class WorkoutForm extends React.Component {
   }
 
   render() {
+    let exerciseSelect;
     const renderMultiselect = ({ input, ...rest }) =>
       <Multiselect {...input}
         onBlur={() => input.onBlur()}
         value={input.value || []} // requires value to be an array
         {...rest} />
 
-    if (this.props.exercises) {
+    if (this.props.exercises) { //make sure exercises are loaded from server, else display loading
       exerciseSelect = (
         <div >
           <label>Create a workout</label>
@@ -79,6 +80,7 @@ export class WorkoutForm extends React.Component {
               component={Input}
               type='text'
               name='workoutName'
+              placeholder='Workout name'
               validate={[required]} />
           </div>
 
@@ -87,7 +89,6 @@ export class WorkoutForm extends React.Component {
           <button type='submit' disabled={this.props.pristine || this.props.submitting || this.props.invalid}>Add Workout</button>
         </form>
 
-        {/* SVG */}
         <div className='create-workout-container'>
           <div className='svg-container-create'>
             <SVGUsage
@@ -103,16 +104,19 @@ const selector = formValueSelector('workout')
 
 export const mapStatetoProps = (state, props) => {
   const exercisesSelector = selector(state, 'workoutArray') || []
+  // [{full exercise obj..}, {...}]
   const exerciseMap = exercisesSelector.map(exercise => exercise.musclesWorked.map(muscle => muscle.name));
+  // [['Legs', 'Legs', 'Arms'...]]
   const newArr = [].concat.apply([], exerciseMap);
+  // ['Legs', 'Legs', 'Arms'...]
   let countedNames = countBy(newArr, (name) => {
-    return name;
+    return name; // {'Arms': 1, 'Legs': 3...}
   });
 
   return {
     exercises: state.exercise.exercises,
     loggedIn: state.auth.currentUser != null,
-    countedNames
+    countedNames // required for SVG response
   }
 }
 
