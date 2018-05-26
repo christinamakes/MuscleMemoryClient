@@ -42,6 +42,7 @@
 }
 
 .homepage-signup-form {
+  font-family: 'Open Sans Condensed';
   border-radius: 15px;
   border-top: 33px solid #F1F1F1;
   position: absolute;
@@ -53,7 +54,46 @@
   z-index: 3;
 }
 
+.homepage-signup-form p {
+  font-size: 25px;
+  line-height: 66px;
+  margin-left: 10px;
+  letter-spacing: 1.3px;
+}
 
+.form-pair-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-top: 10px;
+}
+
+
+.form-pair {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.form-pair img {
+  height: 60px;
+  padding-top: 6px;
+}
+
+.form-pair-container a {
+  font-family: 'Maven Pro';
+  color: black;
+  margin-left: 40px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.form-divider {
+  text-align: center;
+  color: gray;
+  font-size: 9px;
+}
 
 .buttons {
   margin-left: 120px;
@@ -64,25 +104,10 @@
   border: 1px solid black;
 }
 
-.buttons a {
-  margin-left: 30px;
-  width: 100px;
-  height: 80px;
-  border-radius: 5px;
-  background:#8ed887;
-  border: 10px solid #8ed887;
-  /* border-color:#90e58d; */
-  font-family: 'Quicksand', sans-serif;
-  font-size: 16px
-}
-
-.buttons a:hover {
-  text-decoration: underline
-}
-
 
 @media only screen and (max-width: 440px) {
   .homepage-signup-form {
+    font-family: 'Open Sans Condensed';
     display: none
   }
   .hp-text-container {
