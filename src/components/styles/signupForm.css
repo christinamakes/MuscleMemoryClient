@@ -19,7 +19,6 @@
   width: 400px;
   margin-top: 51px;
   padding-top: 5px;
-  background-color: rgba(0, 0, 0, 0.74);
   border-radius: 5px;
 }
 
@@ -32,16 +31,17 @@
 .sign .form-input input{
   font-family: 'Quicksand', sans-serif;
   font-size: 14px;
-  border: none;
+  border: .2px solid rgba(224, 224, 224, 0.651);
   color: black;
   height: 20px
 }
 
 .fieldset-sign label {
-  color: white;
-  margin-top: 50px;
-  margin-left: 20px;
-  font-family: 'Quicksand', sans-serif;
+  display: none
+}
+
+.signup-form .form-input::placeholder {
+  margin-left: 15px;
 }
 
 /*  Form error  */
