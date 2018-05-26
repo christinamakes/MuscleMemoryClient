@@ -9,20 +9,20 @@ import WorkoutPage from './workoutPage';
 import Dashboard from './dashboard';
 import HomePage from './homepage';
 
-import {Route} from 'react-router-dom';
-import {refreshAuthToken} from '../actions/auth'
+import { Route } from 'react-router-dom';
+import { refreshAuthToken } from '../actions/auth'
 
 
 
 class App extends Component {
-  
+
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
-        // refresh token when logged in
-        this.startPeriodicRefresh();
+      // refresh token when logged in
+      this.startPeriodicRefresh();
     } else if (prevProps.loggedIn && !this.props.loggedIn) {
-        // stop refesh on log out
-        this.stopPeriodicRefresh();
+      // stop refesh on log out
+      this.stopPeriodicRefresh();
     }
   }
 
@@ -38,7 +38,7 @@ class App extends Component {
   };
 
   stopPeriodicRefresh() {
-    if(!this.refreshInterval) {
+    if (!this.refreshInterval) {
       return;
     }
     clearInterval(this.refreshInterval)
@@ -47,7 +47,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
         <Route exact path='/register' component={SignupPage} />
         <Route exact path='/login' component={Login} />
         <Route exact path='/exercises' component={ExercisePage} />

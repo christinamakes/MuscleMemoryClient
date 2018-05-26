@@ -1,0 +1,106 @@
+.nav-homepage {
+  margin-top: 10px;
+  display: flex;
+  height: 60px;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-homepage a {
+  font-family: 'Raleway', sans-serif;
+  text-transform: lowercase;
+  flex: 1;
+  padding-right: 30px;
+  padding-left: 30px;
+  color: black;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.not-loggedin {
+  margin-right: 20px;
+}
+
+.nav-homepage .btn-bld a {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 10px 30px 10px 30px;
+}
+
+.home a {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 25px;
+}
+.mobile-only-nav-homepage {
+  display: none
+}
+
+@media only screen and (max-width: 800px) {
+
+}
+
+@media only screen and (max-width: 430px) {
+  .nav-homepage a {
+    display: none;
+    overflow: hidden;
+  }
+
+  .mobile-only-nav-homepage {
+    /* z-index: 2; */
+    display: block;
+    overflow: auto;
+    height: 100%
+  }
+
+  .mobile-only-nav-homepage a {
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    overflow: hidden;    
+  }
+  
+  /* Position and sizing of burger button */
+  .bm-burger-button {
+    position: absolute;
+      width: 36px;
+      height: 30px;
+      right: 36px;
+      top: 27px;
+  }
+
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    background: #373a47;
+  }
+
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 55px;
+    width: 55px;
+  }
+
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #bdc3c7;
+  }
+
+  /* General sidebar styles */
+  .bm-menu {
+    background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    overflow-y: hidden;
+  }
+
+  /* Wrapper for item list */
+  .bm-item-list a {
+    padding: 0;
+  }
+
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
