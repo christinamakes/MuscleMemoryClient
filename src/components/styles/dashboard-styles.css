@@ -1,23 +1,41 @@
 
 @media only screen and (max-width: 800px) {
-
-  .dashboard-container {
+  
+  .inner-container {
     display: flex;
+    width: 90%;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  div.inner-container {
-    width: 100%;
-    flex-direction: column;
+  .worked-muscles {
+    order: 1
+  }
+
+  .recent-workout {
+    order: 1;
+    margin-bottom: 10px;
+  }
+
+  .log-workout {
+    order: 13;
+    margin-bottom: 10px;
+  }
+
+  .workout-stats {
+    order: 1;
+    margin-top: 10px;
   }
 
 }
 
 .dashboard-container {
-  padding-top: 10px 
+  padding-top: 10px;
 }
 
 .inner-container {
-  width: 95%;
+  width: 97%;
   display: flex;
   margin-left: auto;
   margin-right: auto;
@@ -25,18 +43,19 @@
 }
 
 .recent-workout{
-  height: 100%;
+  /* height: 20%; */
 }
 
 
 .worked-muscles {
-  min-width: 40vw;
-  max-width: 40vw;
-  height: 100vh;
+  min-width: 50vw;
+  max-width: 50vw;
+  /* height: 100vh; */
 }
 
 .log-workout {
-  min-width: 40vw;
+  /* min-width: 40vw;
   max-width: 40vw;
-  width: 30vw;
+  width: 30vw; */
+  margin-bottom: 30px;
 }

@@ -20,12 +20,15 @@ class Dashboard extends React.Component {
             <WorkedMuscles />
           </div>
 
-          <div className='recent-workout'>
-            <RecentWorkout />
-          </div>
+          <div className='workout-stats'>
+            <div className='log-workout'>
+              <LogWorkout />
+            </div>
 
-          <div className='log-workout'>
-            <LogWorkout />
+            <div className='recent-workout'>
+              <RecentWorkout />
+            </div>
+
           </div>
         </div>
 

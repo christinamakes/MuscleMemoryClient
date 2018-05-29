@@ -2,16 +2,6 @@
   .workedMuscles-container {
     width: 100vw;
   }
-
-  .muscleStrain-container {
-    /* background-color: orange; */
-    border-top: 1px solid lightgray;
-    margin-left: -30px;
-    margin-top: 25px;
-    height: 150px;
-    column-count: 2;
-    column-rule: 1px solid lightblue;
-  }
 }
 
 .workedMuscles-container {
@@ -20,8 +10,7 @@
   justify-content: center;
   align-content: center;
   /* background-color: blue; */
-  height: 90%;
-  border-right: 1px solid lightgray; 
+  /* height: 90%; */
 }
 
 .svg-container {
@@ -29,13 +18,4 @@
   /* border: 1px solid black; */
 }
 
-.muscleStrain-container {
-  /* background-color: orange; */
-  border-top: 1px solid lightgray;
-  margin-left: -30px;
-  margin-top: 25px;
-  height: 150px;
-  column-count: 2;
-  column-rule: 1px solid lightblue;
-  /* column-width: 10px; */
-}
+

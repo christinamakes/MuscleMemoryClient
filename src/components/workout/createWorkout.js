@@ -72,28 +72,28 @@ export class WorkoutForm extends React.Component {
 
     return (
       <div className='workout-form-container'>
-        <form className='add-workout-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
-          <h1>Create a workout</h1>
-          <div className='fieldset-workout'>
-            <label htmlFor='workoutName'>Workout Name</label>
-            <Field
-              component={Input}
-              type='text'
-              name='workoutName'
-              placeholder='Workout name'
-              validate={[required]} />
-          </div>
+        <div className='create-inner-container'>
 
-          <div className='exerciseSelect'>{exerciseSelect}</div>
+          <form className='add-workout-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+            <h1>Create a workout</h1>
+            <div className='fieldset-workout'>
+              <label htmlFor='workoutName'>Workout Name</label>
+              <Field
+                component={Input}
+                type='text'
+                name='workoutName'
+                placeholder='Workout name'
+                validate={[required]} />
+            </div>
+            <div className='exerciseSelect'>{exerciseSelect}</div>
+            <button type='submit' disabled={this.props.pristine || this.props.submitting || this.props.invalid}>Add Workout</button>
+          </form>
 
-          <button type='submit' disabled={this.props.pristine || this.props.submitting || this.props.invalid}>Add Workout</button>
-        </form>
-
-        <div className='create-workout-container'>
           <div className='svg-container-create'>
             <SVGUsage
               usedMuscles={this.props.countedNames} />
           </div>
+
         </div>
       </div>
     );
