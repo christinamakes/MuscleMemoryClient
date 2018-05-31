@@ -1,28 +1,3 @@
-@media only screen and (max-width: 900px) {
-
-  .workout-page {
-    display: flex;
-    flex-direction: column;
-    /* overflow: visible; */
-  }
-  
-  .workout-picture {
-    width: 0;
-    height: 0;
-    display: none;
-    visibility: hidden;
-  }
-
-  .workout--form {
-    display: block;
-    padding-left: 50px;
-  }
-  
-  .your-workouts {
-    display: block;
-    padding-left: 50px;
-  }
-}
 
 .workout-page {
   /* position: relative; */
@@ -53,8 +28,6 @@
 }
 
 .workout-picture {
-  /* flex: 0 1 100%; */
-  background-image: url('../../assets/pexels-photo-685530.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -370px 0px;
@@ -62,3 +35,25 @@
   height: 100vh
 }
 
+@media only screen and (max-width: 440px) {
+
+  .workout-page {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .workout-picture {
+    width: 0;
+    height: 0;
+    display: none;
+    visibility: hidden;
+  }
+
+  .workout-form {
+    width: 100vw;
+  }
+  
+  .your-workouts {
+    width: 100vw
+  }
+}

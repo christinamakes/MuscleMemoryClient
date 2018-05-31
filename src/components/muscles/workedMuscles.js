@@ -1,6 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {getMusclesFromWorkout} from '../../actions/workout'
+import { connect } from 'react-redux';
+import { getMusclesFromWorkout } from '../../actions/workout'
 import SVGUsage from '../generateColorMap';
 import Strain from '../generateStrain';
 
@@ -13,29 +13,25 @@ class WorkedMuscles extends React.Component {
     if (this.props.loggedIn && this.props.recentWorkout.length > 0) this.props.dispatch(getMusclesFromWorkout());
   }
 
-  render () {
+  render() {
     const usedMuscles = this.props.recentMuscles;
 
     return (
       <div className='workedMuscles-container'>
         <div className='svg-container'>
-          <SVGUsage 
-            usedMuscles={usedMuscles}/> {/* SVG */}
-        </div>
-        <div className='muscleStrain-container'>
-          <Strain
-            usedMuscles={usedMuscles} />
+          <SVGUsage
+            usedMuscles={usedMuscles} /> {/* SVG */}
         </div>
       </div>
-      )
+    )
   }
-  
+
 }
 
-export const mapStatetoProps = (state,props) => ({
+export const mapStatetoProps = (state, props) => ({
   loggedIn: state.auth.currentUser != null,
   recentMuscles: state.workout.muscles ? state.workout.muscles : [],
   recentWorkout: state.auth.currentUser ? state.auth.currentUser.recentWorkout : 'Please log in to see recent workout'
-}) 
+})
 
 export default connect(mapStatetoProps)(WorkedMuscles)

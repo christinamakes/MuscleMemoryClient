@@ -6,11 +6,10 @@
   list-style: none;
   /* background: linear-gradient(to right, #fc4a1a, #f7b733) */
   /* background-color: #FC5830; */
-  background: #cb2d3e;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-  
+  /* background: #cb2d3e;  
+  background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e); 
+  background: linear-gradient(to right, #ef473a, #cb2d3e);  */
+  box-shadow: 0px .1px 10px rgba(153, 153, 153, 0.74);
 }
 
 a {
@@ -19,20 +18,88 @@ a {
   flex: 1;
   padding-right: 30px;
   padding-left: 30px;
-  color: white;
+  color: black;
   font-size: 16px;
   text-decoration: none;
 }
-
-a:hover {
-  
-} 
 
 .home a {
   font-family: 'Maven Pro', sans-serif;
   font-size: 25px;
 }
+.mobile-only-nav {
+  display: none
+}
 
-/* .active {
-  color: purple;
-} */
+@media only screen and (max-width: 800px) {
+  .nav {
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .nav a {
+    display: none;
+    overflow: hidden;
+  }
+
+  .mobile-only-nav {
+    /* z-index: 2; */
+    display: block;
+    overflow: auto;
+    height: 100%
+  }
+
+  .mobile-only-nav a {
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    overflow: hidden;    
+  }
+  
+  /* Position and sizing of burger button */
+  .bm-burger-button {
+    position: absolute;
+      width: 36px;
+      height: 30px;
+      right: 36px;
+      top: 27px;
+  }
+
+  /* Color/shape of burger icon bars */
+  .bm-burger-bars {
+    background: #373a47;
+  }
+
+  /* Position and sizing of clickable cross button */
+  .bm-cross-button {
+    height: 55px;
+    width: 55px;
+  }
+
+  /* Color/shape of close button cross */
+  .bm-cross {
+    background: #bdc3c7;
+  }
+
+  /* General sidebar styles */
+  .bm-menu {
+    background: #ffffff;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    overflow-y: hidden;
+  }
+
+  /* Wrapper for item list */
+  .bm-item-list a {
+    padding: 0;
+  }
+
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(145, 143, 143, 0.3);
+  }
+}
+

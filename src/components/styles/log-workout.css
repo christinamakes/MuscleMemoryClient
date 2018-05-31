@@ -2,8 +2,7 @@
   .complete-workout-container {
     width: 100vw;
     font-family: 'Raleway', sans-serif;
-    border-left: 1px solid lightgray;
-    margin-bottom: 30px
+    /* margin-bottom: 30px */
   }
 
   .complete-workout-container h1 {
@@ -16,13 +15,11 @@
   /* background-color: blue; */
   font-family: 'Raleway', sans-serif;
   display: flex;
-  padding: 0 5em 0 5em;
-  height: 90%;
-  border-left: 1px solid lightgray;
+  /* padding: 0 5em 0 0; */
 }
 
 .complete-workout-container h1 {
-  text-align: center;
+  text-align: left;
   padding-top: 10px;
   font-size: 19px;
   font-weight: bold;
@@ -35,6 +32,15 @@
   border-radius: 3px;
 }
 
-.fieldset-log-workout {
-
+.workoutSelect label{
+  display: none
 }
+
+.workoutSelect button {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding-right: 5px;
+  margin: 0 2px 0 5px;
+}
+

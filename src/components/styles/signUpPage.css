@@ -26,4 +26,60 @@ h3 {
   text-align: center
 }
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+.signupPage .flex-container-sign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signupPage .row-sign {
+  width: auto;
+  border-radius: 2px;
+}
+
+.signuPage .flex-item-sign {
+  height: 400px;
+  width: 300px;
+  margin-top: 51px;
+  padding-top: 5px;
+  border-radius: 5px;
+}
+
+.signupPage .signupForm {
+  background-color: rgba(0, 0, 0, 0.74);
+  width: 270px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0 0px 0px;
+  height: 300px;
+}
+
+.signupPage .sign .form-input input{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  border: .2px solid rgba(224, 224, 224, 0.651);
+  color: black;
+  height: 20px
+}
+
+.signuPpage .fieldset-sign label {
+  display: none
+}
+
+.signupPage .signup-form .form-input::placeholder {
+  margin-left: 15px;
+}
+
+.signupPage .signup-form button {
+  margin-left: -10px;
+  margin-top: 3px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  /* height: 26px;
+  width: 120px; */
+}
+
 

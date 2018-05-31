@@ -1,26 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-@media only screen and (max-width: 900px) {
-  .browse-workouts {
-    width: 100vw
-  }
-}
 
 .browse-workouts {
   font-family: 'Quicksand', sans-serif;
-  height:50%;
-  display:flex;
-  flex-direction: column;
-  align-items:center;
-  justify-content:center;
 }
 
 
 .workout-list {
-  /* overflow-y: scroll; */
-  /* height: 400px !important; */
-  /* padding-top: 18px; */
   width: 300px;
+  height: auto;
 }
 
 .browse-workouts p:hover {
@@ -34,6 +22,10 @@
 
 .browse-workouts h1 {
   font-size: 25px;
-  /* padding-top: 3%; */
   font-weight: bold;
 }
+  @media only screen and (max-width: 400px) {
+    .browse-workouts {
+      width: 100vw
+    }
+  }
