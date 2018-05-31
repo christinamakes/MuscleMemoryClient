@@ -48,7 +48,7 @@
   position: absolute;
   top: 9em;
   right: 6.5em;
-  height: 80vh;
+  height: 70vh;
   width: 400px;
   background-color: #F8F8F9;
   z-index: 3;
@@ -68,7 +68,6 @@
   padding-top: 10px;
 }
 
-
 .form-pair {
   display: flex;
   flex-direction: row;
@@ -81,15 +80,15 @@
 }
 
 .form-pair-container a {
-  font-family: 'Maven Pro';
-  color: black;
-  margin-left: 40px;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 19px;
+  font-family: 'Open Sans Condensed';
+  margin-left: 43px;
   letter-spacing: 1.3px;
+  font-weight: 600;
+  color: rgb(155, 81, 50)
 }
 
-.form-divider {
+.form-divider  {
   text-align: center;
   color: gray;
   font-size: 9px;
@@ -104,16 +103,99 @@
   border: 1px solid black;
 }
 
+.homepage-body-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 80vh
+}
 
-@media only screen and (max-width: 440px) {
+/* SIGN UP FORM */
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+.flex-container-sign {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto; */
+}
+
+.row-sign {
+  width: auto;
+  border-radius: 2px;
+}
+
+.flex-item-sign {
+  height: 400px;
+  width: 400px;
+  margin-top: 51px;
+  padding-top: 5px;
+  border-radius: 5px;
+}
+
+.signup-form {
+  width: 50%;
+  margin-top: -45px;
+  /* width: 270px; */
+  /* margin: 10px 60px 10px 100px; */
+  /* background-color: blue; */
+}
+
+.sign .form-input input{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  border: .2px solid rgba(224, 224, 224, 0.651);
+  color: black;
+  height: 25px
+}
+
+.fieldset-sign label {
+  display: none
+}
+
+.sign input::placeholder {
+  margin-left: 5px;
+  padding-left: 5px;
+}
+
+/*  Form error  */
+.sign .form-input .form-error {
+  color: blue;
+  text-align: center;
+  font-size: 35px;
+  display: block;
+}
+
+.fieldset-sign {
+  margin-top:20px;
+  margin-bottom:20px
+}
+
+.sign input {
+  margin-top: 5px;
+}
+
+.signup-form button {
+  margin-left: -10px;
+  margin-top: 3px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
+
+
+@media only screen and (max-width: 500px) {
   .homepage-signup-form {
     font-family: 'Open Sans Condensed';
     display: none
   }
+
   .hp-text-container {
     padding-top: 14px;
-    padding-right: 13px;
-    padding-left: 13px;
+    padding-right: 10px;
+    padding-left: 10px;
     padding-bottom: 14px;
     margin-bottom: 5px;
   }
@@ -136,10 +218,11 @@
 
 }
 
-@media only screen and (max-width: 790px) {
+@media only screen and (max-width: 1200px) and (min-width: 500) {
   .homepage-signup-form {
     display: none
   }
+
 
   .hp-text-container {
     padding-top: 34px;

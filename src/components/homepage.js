@@ -19,15 +19,24 @@ export default class HomePage extends React.Component {
           <div className='form-pair-container'>
             <div className='form-pair'>
               <img src={barbell} alt='null'></img>
-              <p>Record your workout</p>
+              <p>Go to your account</p>
             </div>
-            <NavLink to='/login'>Login</NavLink>
+            <NavLink to='/login'>LOGIN</NavLink>
           </div>
           <p className='form-divider'>or</p>
+          <div className='form-pair-container'>
+            <div className='form-pair'>
+              <img src={barbell} alt='null'></img>
+              <p>Make a new account</p>
+            </div>
+          </div>
           <SignupForm />
-          <p>Signup</p>
         </div>
         <div className='homepage-picture-main'></div>
+        <div className='homepage-body-content'>
+          <p>Visualize your workouts</p>
+          <p>Create custom exercises</p>
+        </div>
       </div>)
   }
 }

@@ -73,12 +73,25 @@
 
 }
 
-@media only screen and (max-width: 440px) {
-  .workout-form-container form {
-    width: 100vw;
-  }
-
+@media only screen and (max-width: 800px) {
   .workout-form-container .form-input input {
     border: 1px solid rgb(204,204,204, .8)
+  }
+
+  .svg-container-create {
+    position: relative;
+    height: auto;
+    width: 90vw;
+    margin-left: 120px;
+    margin-top: -220px;
+    margin-bottom: 10px
+  }
+
+  .workout-form-container form {
+    /* margin-left: 55vw; */
+    display: block;
+    margin-top: 0;
+    height: auto;
+    width: 90vw;
   }
 }
