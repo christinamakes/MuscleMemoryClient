@@ -28,8 +28,6 @@
 }
 
 .workout-picture {
-  /* flex: 0 1 100%; */
-  background-image: url('../../assets/pexels-photo-685530.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: -370px 0px;

@@ -105,23 +105,58 @@
 
 .homepage-body-content {
   display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.homepage-body-content img {
+  padding: 10px 0 20px 0;
+  align-self: center;
+  width: 500px;
+}
+
+.homepage-body-content-words {
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 80vh
+  font-family: 'Maven Pro';
+}
+
+.homepage-word-pairs {
+  max-width: 300px;
+  height: 200px;
+  font-size: 20px
+}
+
+.homepage-word-pairs h2 {
+  font-size: 23px;
+  padding-bottom: 5px;
+}
+
+.signature {
+  width: 100%;
+  background-color: #FD975D;
+  margin-top: 50px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signature p {
+  text-align: center;
+  padding-top: 40px;
+  font-family: 'Maven Pro', sans-serif
+}
+
+.homepage-body .signature a {
+  margin-top: 10px;
+  font-size: 25px;
+  text-decoration: underline
 }
 
 /* SIGN UP FORM */
-
-@import url('https://fonts.googleapis.com/css?family=Quicksand');
-
-.flex-container-sign {
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: auto; */
-}
 
 .row-sign {
   width: auto;
@@ -145,7 +180,7 @@
 }
 
 .sign .form-input input{
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Maven Pro', sans-serif;
   font-size: 14px;
   border: .2px solid rgba(224, 224, 224, 0.651);
   color: black;
@@ -185,6 +220,8 @@
   border-radius: 3px;
 }
 
+/* MEDIA QUERIES */
+
 
 @media only screen and (max-width: 500px) {
   .homepage-signup-form {
@@ -216,14 +253,39 @@
     margin: 0;
   }
 
+  .homepage-body-content-words {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    /* font-family: 'Maven Pro'; */
+  }
+
+  .homepage-body-content img {
+    padding: 10px 0 70px 0;
+    align-self: center;
+    width: 400px;
+  }
+
+  .homepage-word-pairs {
+    align-self: center;
+    height: 400px;
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  .signature {
+    margin-top: 80px;
+  }
+
+  
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 500) {
+@media only screen and (max-width: 1200px) {
   .homepage-signup-form {
     display: none
   }
-
-
+  
+  
   .hp-text-container {
     padding-top: 34px;
     padding-bottom: 34px;
@@ -247,5 +309,8 @@
     line-height: 40px;
     margin: 0;
   }
+  
 
+  
+  
 }

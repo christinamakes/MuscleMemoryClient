@@ -86,7 +86,7 @@ a {
 
   /* General sidebar styles */
   .bm-menu {
-    background: #373a47;
+    background: #ffffff;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
     overflow-y: hidden;
@@ -99,6 +99,7 @@ a {
 
   /* Styling of overlay */
   .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(145, 143, 143, 0.3);
   }
 }
+
