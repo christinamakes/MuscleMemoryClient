@@ -27,10 +27,30 @@ export class LoginForm extends React.Component {
       this.props.history.push("/dashboard")
     }
     let error;
-    if (this.props.error) {
+    if (this.props.error !== null) {
       error = (
         <div className="form-error">
-          {this.props.error}
+          <p>Incorrect username or password</p>
+        </div>
+      );
+    } else {
+      error = (
+        <div className="form-error">
+
+        </div>
+      )
+    }
+    let loading;
+    if (this.props.loading) {
+      error = (
+        <div className="form-loading">
+          <p>Loading, hang tight!</p>
+        </div>
+      );
+    } else {
+      error = (
+        <div className="form-loading">
+
         </div>
       );
     }
@@ -41,6 +61,7 @@ export class LoginForm extends React.Component {
             <form className='login-form' onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
               <h1>Log in</h1>
               {error}
+              {loading}
               <div className='fieldset-log'>
                 <label htmlFor='username'>Username</label>
                 <Field
@@ -68,7 +89,9 @@ export class LoginForm extends React.Component {
 }
 
 export const mapStateToProps = (state, props) => ({
-  loggedIn: state.auth.currentUser !== null
+  loggedIn: state.auth.currentUser !== null,
+  loading: state.auth.loading,
+  error: state.auth.error
 })
 
 export default reduxForm({

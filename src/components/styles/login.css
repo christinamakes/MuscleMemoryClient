@@ -28,6 +28,10 @@
   margin: 0px 50px 0px 85px;
 }
 
+.form-loading, .form-error {
+  color: white
+}
+
 .fieldset-log {
   margin-top: 10px;
 }
